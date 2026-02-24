@@ -7,22 +7,21 @@
 
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:"Segoe UI", Arial, sans-serif; background: linear-gradient(135deg, #0A1F33, #132E4A); color:#fff; text-align:center; }
+body { font-family:"Segoe UI", Arial, sans-serif; background: linear-gradient(135deg,#0A1F33,#132E4A); color:#fff; text-align:center; }
 .container { max-width:900px; margin:auto; padding:80px 25px; }
 h1 { font-size:42px; margin-bottom:15px; }
 h2 { font-size:20px; font-weight:400; color:#C6A75E; margin-bottom:30px; }
 p { font-size:18px; line-height:1.7; margin-bottom:25px; opacity:0.95; }
 .highlight { color:#C6A75E; font-weight:600; }
-.cta-button { display:inline-block; margin-top:30px; padding:15px 40px; background-color:#C6A75E; color:#0A1F33; font-weight:bold; font-size:16px; text-decoration:none; border-radius:6px; transition:0.3s ease; }
-.cta-button:hover { background-color:#e0bf74; }
-footer { margin-top:80px; font-size:14px; opacity:0.7; }
+.trusteeship { color:#FFD700; font-weight:700; font-size:18px; margin-bottom:20px; }
+.divider { width:60px; height:3px; background:#C6A75E; margin:30px auto 30px auto; }
 form { display:flex; flex-direction:column; align-items:center; margin-top:20px; }
 input, textarea, select { width:80%; padding:12px; margin:8px 0; border-radius:5px; border:none; font-size:16px; }
 input:focus, textarea:focus, select:focus { outline:2px solid #C6A75E; }
 button { margin-top:20px; padding:15px 35px; background:#C6A75E; color:#0A1F33; font-weight:bold; font-size:16px; border:none; border-radius:6px; cursor:pointer; transition:0.3s ease; }
 button:hover { background:#e0bf74; }
-.trusteeship { color:#FFD700; font-weight:700; font-size:18px; margin-bottom:20px; }
-.divider { width:60px; height:3px; background:#C6A75E; margin:30px auto 30px auto; }
+footer { margin-top:80px; font-size:14px; opacity:0.7; }
+.confirmation { background:#132E4A; padding:20px; border-radius:8px; margin-top:30px; display:none; }
 </style>
 </head>
 
@@ -43,7 +42,7 @@ button:hover { background:#e0bf74; }
 Successful applicants will join the <strong>FSTL COMET OS Board of Trustees</strong> — a position of authority, oversight, and influence in the next-generation property intelligence infrastructure.
 </p>
 
-<form action="https://formspree.io/f/fstlsite" method="POST">
+<form id="investorForm" action="https://formspree.io/f/fstlsite" method="POST">
 <input type="text" name="name" placeholder="Full Name" required>
 <input type="email" name="_replyto" placeholder="Email Address" required>
 <input type="text" name="country" placeholder="Country of Residence" required>
@@ -56,6 +55,19 @@ Successful applicants will join the <strong>FSTL COMET OS Board of Trustees</str
 <textarea name="statement" placeholder="Brief Statement of Interest / Intent" rows="4" required></textarea>
 <button type="submit">Submit & Request Investor Package</button>
 </form>
+
+<div class="confirmation" id="confirmation">
+<p>✅ Submission received! You will be contacted via <strong>fstlsite@gmail.com</strong> for confirmation of your Trusteeship slot and access to the Investor Package PDF.</p>
+</div>
+
+<script>
+// Show confirmation after form submission
+document.getElementById('investorForm').addEventListener('submit', function(e) {
+    setTimeout(() => {
+        document.getElementById('confirmation').style.display = 'block';
+    }, 500);
+});
+</script>
 
 <footer>
 <p>First Standard Title Limited (FSTL)</p>
