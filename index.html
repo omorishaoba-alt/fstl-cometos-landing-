@@ -24,6 +24,7 @@ footer { margin-top:60px; font-size:14px; opacity:0.7; }
 .confirmation { background:#132E4A; padding:20px; border-radius:8px; margin-top:30px; display:none; }
 .corp-statement { background:#0F2345; color:#C6A75E; padding:20px; border-radius:8px; margin-bottom:20px; }
 .pledge { background:#1B3456; color:#FFD700; padding:18px; border-radius:8px; margin-bottom:30px; }
+#slotsNotice { font-weight:600; color:#FFD700; margin-bottom:15px; }
 </style>
 </head>
 
@@ -63,6 +64,9 @@ At FSTL + COMET OS, we are <strong>BUILDING IN PUBLIC</strong> — ensuring comp
 Successful applicants will join the <strong>FSTL COMET OS Board of Trustees</strong> — a position of authority, oversight, and influence in the next-generation property intelligence infrastructure.
 </p>
 
+<!-- Slots Remaining Display -->
+<p id="slotsNotice">⚜ Slots Remaining: 10 ⚜</p>
+
 <form id="investorForm" action="https://formspree.io/f/fstlsite" method="POST">
 <input type="text" name="name" placeholder="Full Name" required>
 <input type="email" name="_replyto" placeholder="Email Address" required>
@@ -81,12 +85,46 @@ Successful applicants will join the <strong>FSTL COMET OS Board of Trustees</str
 <p>✅ Submission received! You will be contacted via <strong>fstlsite@gmail.com</strong> for confirmation of your Trusteeship slot and access to the Investor Package PDF.</p>
 </div>
 
+<!-- Phase 5 Automation Script -->
 <script>
-// Show confirmation after form submission
-document.getElementById('investorForm').addEventListener('submit', function(e) {
-    setTimeout(() => {
-        document.getElementById('confirmation').style.display = 'block';
-    }, 500);
+// Phase 5: Click Logging & Slot Counter Automation
+
+const MAX_SLOTS = 10;
+let slotsRemaining = MAX_SLOTS;
+
+function logClick(elementName) {
+    const timestamp = new Date().toISOString();
+    console.log(`CLICK: ${elementName} | Time: ${timestamp}`);
+}
+
+const form = document.getElementById('investorForm');
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); // simulate review process
+
+    const formData = {
+        name: form.name.value,
+        email: form._replyto.value,
+        country: form.country.value,
+        capital_range: form.capital_range.value,
+        statement: form.statement.value,
+        timestamp: new Date().toISOString()
+    };
+
+    console.log('FORM SUBMISSION:', formData);
+
+    if (slotsRemaining > 0) slotsRemaining--;
+
+    document.getElementById('confirmation').style.display = 'block';
+    document.getElementById('slotsNotice').innerText = `⚜ Slots Remaining: ${slotsRemaining} ⚜`;
+
+    if(slotsRemaining === 0){
+        form.querySelector('button').disabled = true;
+        form.querySelector('button').innerText = "All Slots Filled";
+    }
+});
+
+document.querySelectorAll('button, select').forEach(el => {
+    el.addEventListener('click', () => logClick(el.innerText || el.name));
 });
 </script>
 
