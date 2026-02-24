@@ -5,6 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FSTL + COMET OS | Investor Access</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* Accordion styles */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 14px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.3s;
+  margin-bottom: 5px;
+}
+.active, .accordion:hover { background-color: #ccc; }
+.panel {
+  padding: 0 14px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+</style>
 </head>
 <body>
 <div class="container">
@@ -52,7 +74,49 @@ Successful applicants join the <strong>FSTL COMET OS Board of Trustees</strong>.
 <p>✅ Submission received! You will be contacted via <strong>fstlsite@gmail.com</strong> for Trusteeship slot confirmation and Investor Package access.</p>
 </div>
 
+<!-- Q&A Accordion Section -->
+<section class="faq">
+<h2>Frequently Asked Questions</h2>
+
+<button class="accordion">What is COMET OS?</button>
+<div class="panel">
+<p>COMET OS is next-generation property verification and registry intelligence infrastructure by FSTL.</p>
+</div>
+
+<button class="accordion">Who can join the Board of Trustees?</button>
+<div class="panel">
+<p>Only successful applicants from the 10 exclusive investor slots will join the FSTL COMET OS Board of Trustees.</p>
+</div>
+
+<button class="accordion">How are slots allocated?</button>
+<div class="panel">
+<p>Slots are allocated by internal review. Each investor must select a capital allocation range and submit their statement of interest.</p>
+</div>
+
+<button class="accordion">Is my information secure?</button>
+<div class="panel">
+<p>Yes. All submissions are tracked internally by FSTL for full control, auditability, and transparency.</p>
+</div>
+
+<button class="accordion">Can I access this site via WhatsApp?</button>
+<div class="panel">
+<p>Yes. Share the GitHub Pages link and it will open in the mobile browser with full functionality.</p>
+</div>
+
+</section>
+
 <script src="script.js"></script>
+<script>
+// Accordion functionality
+const accordions = document.querySelectorAll(".accordion");
+accordions.forEach(acc => {
+  acc.addEventListener("click", function() {
+    this.classList.toggle("active");
+    const panel = this.nextElementSibling;
+    panel.style.display = (panel.style.display === "block") ? "none" : "block";
+  });
+});
+</script>
 
 <footer>
 <p>First Standard Title Limited (FSTL)</p>
