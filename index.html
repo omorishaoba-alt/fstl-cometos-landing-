@@ -4,115 +4,59 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FSTL + COMET OS | Investor Access</title>
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:"Segoe UI", Arial, sans-serif; background: linear-gradient(135deg,#0A1F33,#132E4A); color:#fff; text-align:center; }
-.container { max-width:900px; margin:auto; padding:60px 25px; }
-h1 { font-size:42px; margin-bottom:15px; }
-h2 { font-size:20px; font-weight:400; color:#C6A75E; margin-bottom:20px; }
-p { font-size:18px; line-height:1.7; margin-bottom:25px; opacity:0.95; }
-.highlight { color:#C6A75E; font-weight:600; }
-.trusteeship { color:#FFD700; font-weight:700; font-size:18px; margin-bottom:20px; }
-.divider { width:60px; height:3px; background:#C6A75E; margin:30px auto 30px auto; }
-form { display:flex; flex-direction:column; align-items:center; margin-top:20px; }
-input, textarea, select { width:80%; padding:12px; margin:8px 0; border-radius:5px; border:none; font-size:16px; }
-input:focus, textarea:focus, select:focus { outline:2px solid #C6A75E; }
-button { margin-top:20px; padding:15px 35px; background:#C6A75E; color:#0A1F33; font-weight:bold; font-size:16px; border:none; border-radius:6px; cursor:pointer; transition:0.3s ease; }
-button:hover { background:#e0bf74; }
-footer { margin-top:60px; font-size:14px; opacity:0.7; }
-.confirmation { background:#132E4A; padding:20px; border-radius:8px; margin-top:30px; display:none; }
-.corp-statement { background:#0F2345; color:#C6A75E; padding:20px; border-radius:8px; margin-bottom:20px; }
-.pledge { background:#1B3456; color:#FFD700; padding:18px; border-radius:8px; margin-bottom:30px; }
-#slotsNotice { font-weight:600; color:#FFD700; margin-bottom:15px; }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
 
-<!-- Corporate Responsibility & Sovereign Commitment -->
+<!-- Corporate Responsibility -->
 <div class="corp-statement">
 <h2>Our Corporate Responsibility & Sovereign Commitment</h2>
-<p>At FSTL + COMET OS, we value collaboration with other platforms. However, we remain fully <strong>sovereign</strong> and have created our own property intelligence infrastructure. We track all clicks, submissions, and investor engagements internally to maintain <strong>full control, auditability, and transparency</strong>. This ensures that every prospective investor is engaged with the highest level of integrity and oversight.</p>
+<p>At FSTL + COMET OS, we value collaboration with other platforms. However, we remain fully <strong>sovereign</strong> and have created our own property intelligence infrastructure. We track all clicks, submissions, and investor engagements internally to maintain <strong>full control, auditability, and transparency</strong>.</p>
 </div>
 
-<!-- BUILDING IN PUBLIC Pledge -->
+<!-- BUILDING IN PUBLIC -->
 <div class="pledge">
 <h2>Our Pledge & Commitment</h2>
-<p>At FSTL + COMET OS, we are <strong>BUILDING IN PUBLIC</strong> — ensuring complete transparency, accountability, and engagement with our prospective investors while maintaining full sovereignty and control of our infrastructure.</p>
+<p>At FSTL + COMET OS, we are <strong>BUILDING IN PUBLIC</strong> — ensuring transparency, accountability, and engagement with prospective investors while maintaining full sovereignty.</p>
 </div>
 
 <h1>FSTL + COMET OS</h1>
 <h2>Sovereign Property Intelligence Infrastructure</h2>
 <div class="divider"></div>
 
-<p><span class="highlight">First Standard Title Limited (FSTL)</span> are pioneers of Title Insurance and Mortgage Insurance in Nigeria.</p>
-<p><span class="highlight">COMET OS</span> is next-generation property verification and registry intelligence infrastructure.</p>
-<p>Structured infrastructure development is ongoing.<br>Allocation and participation are by internal review only.</p>
+<p><strong>First Standard Title Limited (FSTL)</strong> are pioneers of Title Insurance and Mortgage Insurance in Nigeria.</p>
+<p><strong>COMET OS</strong> is next-generation property verification and registry intelligence infrastructure.</p>
+<p>Structured infrastructure development is ongoing. Allocation and participation are by internal review only.</p>
 
-<p class="trusteeship">⚜ Only 10 Exclusive Slots Available ⚜<br>Successful applicants will join the <strong>FSTL COMET OS Board of Trustees</strong> — a position of authority, oversight, and influence.</p>
+<p class="trusteeship">⚜ Only 10 Exclusive Slots Available ⚜<br>Successful applicants join the <strong>FSTL COMET OS Board of Trustees</strong>.</p>
 
-<!-- Slots Remaining Display -->
 <p id="slotsNotice">⚜ Slots Remaining: 10 ⚜</p>
 
 <form id="investorForm" action="https://formspree.io/f/fstlsite" method="POST">
 <input type="text" name="name" placeholder="Full Name" required>
 <input type="email" name="_replyto" placeholder="Email Address" required>
-<input type="text" name="country" placeholder="Country of Residence" required>
+<input type="text" name="country" placeholder="Country" required>
 <select name="capital_range" required>
 <option value="">Select Capital Allocation Range</option>
 <option value="$100K - $250K">$100K - $250K</option>
 <option value="$250K - $500K">$250K - $500K</option>
 <option value="$500K+">$500K+</option>
 </select>
-<textarea name="statement" placeholder="Brief Statement of Interest / Intent" rows="4" required></textarea>
+<textarea name="statement" placeholder="Brief Statement of Interest" rows="4" required></textarea>
 <button type="submit">Submit & Request Investor Package</button>
 </form>
 
 <div class="confirmation" id="confirmation">
-<p>✅ Submission received! You will be contacted via <strong>fstlsite@gmail.com</strong> for confirmation of your Trusteeship slot and access to the Investor Package PDF.</p>
+<p>✅ Submission received! You will be contacted via <strong>fstlsite@gmail.com</strong> for Trusteeship slot confirmation and Investor Package access.</p>
 </div>
 
-<!-- Phase 5 Automation Script -->
-<script>
-const MAX_SLOTS = 10;
-let slotsRemaining = MAX_SLOTS;
-
-function logClick(elementName){
-    const timestamp = new Date().toISOString();
-    console.log(`CLICK: ${elementName} | Time: ${timestamp}`);
-}
-
-const form = document.getElementById('investorForm');
-form.addEventListener('submit', function(e){
-    e.preventDefault(); // simulate review process
-    const formData = {
-        name: form.name.value,
-        email: form._replyto.value,
-        country: form.country.value,
-        capital_range: form.capital_range.value,
-        statement: form.statement.value,
-        timestamp: new Date().toISOString()
-    };
-    console.log('FORM SUBMISSION:', formData);
-    if(slotsRemaining > 0) slotsRemaining--;
-    document.getElementById('confirmation').style.display = 'block';
-    document.getElementById('slotsNotice').innerText = `⚜ Slots Remaining: ${slotsRemaining} ⚜`;
-    if(slotsRemaining === 0){
-        form.querySelector('button').disabled = true;
-        form.querySelector('button').innerText = "All Slots Filled";
-    }
-});
-
-document.querySelectorAll('button, select').forEach(el=>{
-    el.addEventListener('click', ()=> logClick(el.innerText || el.name));
-});
-</script>
+<script src="script.js"></script>
 
 <footer>
 <p>First Standard Title Limited (FSTL)</p>
 <p>Contact: fstlsite@gmail.com</p>
 </footer>
-
 </div>
 </body>
 </html>
