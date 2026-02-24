@@ -1,144 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FSTL + COMET OS | Sovereign Property Intelligence</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FSTL + COMET OS Landing</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background-color: #f9f9f9; color: #111; }
+    h1,h2,h3 { color: #0a2e49; }
+    section { margin-bottom: 30px; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+    label { display:block; margin-top:10px; font-weight:bold; }
+    select,input[type="submit"],input[type="file"] { margin-top:5px; padding:10px; width:100%; max-width:400px; border-radius:5px; border:1px solid #ccc;}
+    #confirmation { margin-top:15px; color: green; font-weight: bold;}
+    canvas { margin-top:15px; }
+  </style>
 </head>
 <body>
-<header>
-  <h1>FSTL + COMET OS</h1>
-  <h2>Sovereign Property Intelligence Infrastructure</h2>
-</header>
 
-<section id="corporate-commitment">
-  <h3>Our Corporate Responsibility & Sovereign Commitment</h3>
-  <p>At FSTL + COMET OS, we value collaboration with other platforms. However, we remain fully <strong>sovereign</strong> and have created our own property intelligence infrastructure. We track all clicks, submissions, and investor engagements internally to maintain <strong>full control, auditability, and transparency</strong>.</p>
+  <section>
+    <h1>FSTL + COMET OS</h1>
+    <h2>Sovereign Property Intelligence Infrastructure</h2>
+    <h3>Our Corporate Responsibility & Sovereign Commitment</h3>
+    <p>
+      At FSTL + COMET OS, we value collaboration with other platforms. However, we remain fully <strong>sovereign</strong> and have created our own property intelligence infrastructure. We track all clicks, submissions, and investor engagements internally to maintain <strong>full control, auditability, and transparency</strong>.
+    </p>
+    <h3>Our Pledge & Commitment</h3>
+    <p>
+      At FSTL + COMET OS, we are <strong>BUILDING IN PUBLIC</strong> — ensuring transparency, accountability, and engagement with prospective investors while maintaining full sovereignty.
+    </p>
+  </section>
 
-  <h3>Our Pledge & Commitment</h3>
-  <p>At FSTL + COMET OS, we are <strong>BUILDING IN PUBLIC</strong> — ensuring transparency, accountability, and engagement with prospective investors while maintaining full sovereignty.</p>
-</section>
+  <section>
+    <h3>Investment Opportunity</h3>
+    <p><strong>First Standard Title Limited (FSTL)</strong> are pioneers of Title Insurance and Mortgage Insurance in Nigeria.</p>
+    <p><strong>COMET OS</strong> is next-generation property verification and registry intelligence infrastructure.</p>
+    <p>Structured infrastructure development is ongoing. Allocation and participation are by internal review only.</p>
+    <p>Only 10 Exclusive Slots Available. Successful applicants join the <strong>FSTL COMET OS Board of Trustees</strong>.</p>
+    <p>Slots Remaining: <span id="slotsRemaining">10</span></p>
 
-<section id="investment-opportunity">
-  <h3>Investment Opportunity</h3>
-  <p><strong>First Standard Title Limited (FSTL)</strong> are pioneers of Title Insurance and Mortgage Insurance in Nigeria.</p>
-  <p><strong>COMET OS</strong> is next-generation property verification and registry intelligence infrastructure.</p>
-  <p>Structured infrastructure development is ongoing. Allocation and participation are by internal review only.</p>
-  <p>Only 10 Exclusive Slots Available. Successful applicants join the <strong>FSTL COMET OS Board of Trustees</strong>.</p>
-  <p>Slots Remaining: <span id="slots-remaining">10</span></p>
+    <form id="capitalForm">
+      <label>Select Capital Allocation Range:</label>
+      <select id="capitalRange" required>
+        <option value="">Select range</option>
+        <option value="$100K - $250K">$100K - $250K</option>
+        <option value="$250K - $500K">$250K - $500K</option>
+        <option value="$500K+">$500K+</option>
+      </select>
+      <input type="submit" value="Submit & Request Investor Package">
+    </form>
+    <div id="confirmation"></div>
+  </section>
 
-  <form id="investment-form">
-    <label for="capital">Select Capital Allocation Range:</label>
-    <select id="capital" required>
-      <option value="" disabled selected>Select range</option>
-      <option value="$100K-$250K">$100K - $250K</option>
-      <option value="$250K-$500K">$250K - $500K</option>
-      <option value="$500K+">$500K+</option>
-    </select>
-    <button type="submit">Submit & Request Investor Package</button>
-  </form>
-  <p id="submission-message" style="display:none;">✅ Submission received! You will be contacted via <strong>fstlsite@gmail.com</strong> for Trusteeship slot confirmation and Investor Package access.</p>
-</section>
+  <section>
+    <h3>Investor PDF Upload</h3>
+    <form id="pdfForm">
+      <label>Upload relevant investor or verification PDF:</label>
+      <input type="file" id="pdfUpload" accept=".pdf">
+      <input type="submit" value="Upload PDF">
+    </form>
+    <div id="pdfConfirmation"></div>
+  </section>
 
-<section id="pdf-upload">
-  <h3>Investor PDF Upload</h3>
-  <p>For visitors who are off-platform, you may upload relevant investment or verification documents below:</p>
-  <form id="pdf-form" enctype="multipart/form-data">
-    <input type="file" id="pdf-file" accept=".pdf" required>
-    <button type="submit">Upload PDF</button>
-  </form>
-  <p id="pdf-message" style="display:none;">✅ PDF successfully uploaded. FSTL will review and respond via <strong>fstlsite@gmail.com</strong>.</p>
-</section>
+  <section>
+    <h3>Investor Q&A</h3>
+    <ol>
+      <li><strong>What is COMET OS?</strong> COMET OS is FSTL’s next-generation property verification and registry intelligence platform. It transforms verified property assets into investable capital.</li>
+      <li><strong>Who can participate in the Board of Trustees?</strong> Only 10 exclusive investors who successfully allocate capital are eligible.</li>
+      <li><strong>What are the capital allocation ranges?</strong> $100K-$250K, $250K-$500K, $500K+.</li>
+      <li><strong>How are submissions tracked?</strong> All submissions are logged internally. Each investor receives confirmation via <strong>fstlsite@gmail.com</strong>.</li>
+      <li><strong>What protections are in place for investors?</strong> COMET OS operates under FSTL’s Title Insurance protocols. All engagements are auditable.</li>
+      <li><strong>Can I invest from outside Nigeria?</strong> Yes, in USD. Allocations reviewed for compliance.</li>
+      <li><strong>Is COMET OS dependent on any social media or third-party platform?</strong> No. Fully sovereign.</li>
+      <li><strong>How are Trustee slots confirmed?</strong> Via <strong>fstlsite@gmail.com</strong> after submission.</li>
+      <li><strong>Can slots be reserved or transferred?</strong> No. Personal and non-transferable.</li>
+      <li><strong>When will the Investor Package be sent?</strong> Immediately after slot confirmation.</li>
+    </ol>
+  </section>
 
-<section id="qa">
-  <h3>Investor Q&A</h3>
+  <section>
+    <h3>Financial Overview & Intellectual Property Value</h3>
+    <ol>
+      <li><strong>Valuation of COMET OS Intellectual Property:</strong> Preliminary internal valuations: <strong>$25M – $50M</strong>.</li>
+      <li><strong>Capital Allocation & Trusteeship ROI Potential:</strong> Strategic governance, privileged packages, early monetization benefits.</li>
+      <li><strong>Sovereign Revenue Streams:</strong> Property verification fees, data services, partnerships with DFIs and sovereign entities.</li>
+      <li><strong>Risk Mitigation & Oversight:</strong> Board of Trustees ensures full oversight of capital deployment, IP protection, and operational integrity.</li>
+    </ol>
+    <p>Contact: <strong>fstlsite@gmail.com</strong></p>
+  </section>
 
-  <div class="qa-item">
-    <h4>1. What is COMET OS?</h4>
-    <p>COMET OS is FSTL’s next-generation property verification and registry intelligence platform. It provides secure, auditable, and sovereign property data to support capital allocation for underdeveloped economies. It transforms verified property assets into investable capital.</p>
-  </div>
+  <section>
+    <h3>Click QR Tracking</h3>
+    <p>Scan your unique QR code generated from this visit:</p>
+    <canvas id="qrCanvas"></canvas>
+  </section>
 
-  <div class="qa-item">
-    <h4>2. Who can participate in the Board of Trustees?</h4>
-    <p>Only 10 exclusive investors who successfully allocate capital within the specified range are eligible. Trustees hold oversight authority and influence in COMET OS development, ensuring governance and strategic participation.</p>
-  </div>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script>
+    // Slots & Confirmation
+    const slotsRemaining = 10;
+    const confirmationDiv = document.getElementById('confirmation');
+    document.getElementById('capitalForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const selected = document.getElementById('capitalRange').value;
+      if(!selected) return alert('Please select a capital range');
+      confirmationDiv.textContent = "✅ Submission received! You will be contacted via fstlsite@gmail.com for Trusteeship slot confirmation and Investor Package access.";
+      // Reduce slots display (simulate)
+      let slotEl = document.getElementById('slotsRemaining');
+      slotEl.textContent = Math.max(0, parseInt(slotEl.textContent)-1);
+    });
 
-  <div class="qa-item">
-    <h4>3. What are the capital allocation ranges?</h4>
-    <ul>
-      <li>$100K - $250K</li>
-      <li>$250K - $500K</li>
-      <li>$500K+</li>
-    </ul>
-    <p>Capital allocations correspond directly to Trusteeship slots. All investments are reviewed internally for approval.</p>
-  </div>
+    // PDF Upload
+    document.getElementById('pdfForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const fileInput = document.getElementById('pdfUpload');
+      if(fileInput.files.length === 0) return alert('Please select a PDF to upload');
+      document.getElementById('pdfConfirmation').textContent = "✅ PDF uploaded successfully!";
+      fileInput.value = '';
+    });
 
-  <div class="qa-item">
-    <h4>4. How are submissions tracked?</h4>
-    <p>All submissions are logged internally. Slot availability is updated in real time on the landing page. Each prospective investor receives confirmation via <strong>fstlsite@gmail.com</strong> and the Investor Package.</p>
-  </div>
+    // Generate unique QR for each visitor
+    const canvas = document.getElementById('qrCanvas');
+    const uniqueID = 'FSTL-'+Date.now()+'-'+Math.floor(Math.random()*100000);
+    QRCode.toCanvas(canvas, uniqueID, function (error) {
+      if (error) console.error(error);
+      console.log('Generated QR for visitor:', uniqueID);
+    });
+  </script>
 
-  <div class="qa-item">
-    <h4>5. What protections are in place for investors?</h4>
-    <p>COMET OS operates under FSTL’s established Title Insurance and Mortgage Insurance protocols. All data and engagements are fully auditable. Trustees participate in governance to maintain operational oversight and transparency.</p>
-  </div>
-
-  <div class="qa-item">
-    <h4>6. Can I invest from outside Nigeria?</h4>
-    <p>Yes. Capital contributions can be made internationally in USD. All allocations are reviewed to ensure compliance with internal standards and sovereign protocol.</p>
-  </div>
-
-  <div class="qa-item">
-    <h4>7. Is COMET OS dependent on any social media or third-party platform?</h4>
-    <p>No. COMET OS is fully sovereign. While it may interface with platforms for communication, all data, slot tracking, and investor engagement is controlled internally within FSTL infrastructure.</p>
-  </div>
-
-  <div class="qa-item">
-    <h4>8. How are Trustee slots confirmed?</h4>
-    <p>After submitting your capital allocation, you will be contacted via <strong>fstlsite@gmail.com</strong>. Trustee slots are confirmed on a first-approved basis until all 10 slots are filled.</p>
-  </div>
-
-  <div class="qa-item">
-    <h4>9. Can slots be reserved or transferred?</h4>
-    <p>No. Trustee slots are personal and non-transferable. All allocations are governed by internal FSTL review.</p>
-  </div>
-
-  <div class="qa-item">
-    <h4>10. When will the Investor Package be sent?</h4>
-    <p>The Investor Package is sent immediately after your Trusteeship slot is confirmed. It contains all technical, legal, and procedural documentation required for participation.</p>
-  </div>
-</section>
-
-<section id="financials">
-  <h3>Financial Overview & Intellectual Property Value</h3>
-
-  <h4>1. Valuation of COMET OS Intellectual Property</h4>
-  <p>The COMET OS platform represents FSTL’s proprietary algorithms, verification protocols, and sovereign property registry infrastructure. Preliminary internal valuations place the IP between <strong>$25M – $50M</strong>, reflecting exclusivity and market potential.</p>
-
-  <h4>2. Capital Allocation & Trusteeship ROI Potential</h4>
-  <ul>
-    <li>Participate in strategic governance decisions</li>
-    <li>Access privileged investment packages</li>
-    <li>Potentially benefit from early monetization of verified property data</li>
-  </ul>
-
-  <h4>3. Sovereign Revenue Streams</h4>
-  <ul>
-    <li>Property verification fees and premium title insurance facilitation</li>
-    <li>Data intelligence and registry services for institutional partners</li>
-    <li>Strategic partnerships with development finance institutions and sovereign entities</li>
-  </ul>
-
-  <h4>4. Risk Mitigation & Oversight</h4>
-  <p>FSTL’s governance structure, including the Board of Trustees, ensures full oversight of capital deployment, IP protection, and operational integrity.</p>
-</section>
-
-<footer>
-  <p>First Standard Title Limited (FSTL)</p>
-  <p>Contact: <strong>fstlsite@gmail.com</strong></p>
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
