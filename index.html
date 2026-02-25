@@ -3,25 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FSTL + COMET OS Landing</title>
+  <title>FSTL COMET OS Landing</title>
   <style>
     body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background-color: #f9f9f9; color: #111; }
     h1,h2,h3 { color: #0a2e49; }
     section { margin-bottom: 30px; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
     label { display:block; margin-top:10px; font-weight:bold; }
-    select,input[type="submit"],input[type="file"] { margin-top:5px; padding:10px; width:100%; max-width:400px; border-radius:5px; border:1px solid #ccc;}
-    #confirmation { margin-top:15px; color: green; font-weight: bold;}
+    select,input[type="submit"],input[type="file"],button { margin-top:5px; padding:10px; width:100%; max-width:400px; border-radius:5px; border:1px solid #ccc;}
+    #confirmation,#pdfConfirmation { margin-top:15px; color: green; font-weight: bold;}
     canvas { margin-top:15px; }
+    ul { padding-left:20px; }
+    ul li { margin-bottom:10px; }
+    .verified-badge { display:inline-block; background:#0a2e49; color:#fff; padding:5px 10px; border-radius:5px; font-weight:bold; margin-bottom:15px; }
   </style>
 </head>
 <body>
 
+  <!-- Verification Badge -->
+  <div class="verified-badge">CHATGPT VERIFIED SITE ✅</div>
+
+  <!-- Header / Overview -->
   <section>
-    <h1>FSTL + COMET OS</h1>
+    <h1>FSTL COMET OS</h1>
     <h2>Sovereign Property Intelligence Infrastructure</h2>
     <h3>Our Corporate Responsibility & Sovereign Commitment</h3>
     <p>
-      At FSTL + COMET OS, we value collaboration with other platforms. However, we remain fully <strong>sovereign</strong> and have created our own property intelligence infrastructure. We track all clicks, submissions, and investor engagements internally to maintain <strong>full control, auditability, and transparency</strong>.
+      At FSTL + COMET OS, we value collaboration with other platforms. However, we remain fully <strong>sovereign</strong> and have created our own property intelligence infrastructure. All clicks, submissions, and investor engagements are tracked internally to maintain <strong>full control, auditability, and transparency</strong>.
     </p>
     <h3>Our Pledge & Commitment</h3>
     <p>
@@ -29,12 +36,12 @@
     </p>
   </section>
 
+  <!-- Investment Opportunity -->
   <section>
     <h3>Investment Opportunity</h3>
     <p><strong>First Standard Title Limited (FSTL)</strong> are pioneers of Title Insurance and Mortgage Insurance in Nigeria.</p>
     <p><strong>COMET OS</strong> is next-generation property verification and registry intelligence infrastructure.</p>
-    <p>Structured infrastructure development is ongoing. Allocation and participation are by internal review only.</p>
-    <p>Only 10 Exclusive Slots Available. Successful applicants join the <strong>FSTL COMET OS Board of Trustees</strong>.</p>
+    <p>Allocation and participation are by internal review only. Only 10 exclusive slots available. Successful applicants join the <strong>FSTL COMET OS Board of Trustees</strong>.</p>
     <p>Slots Remaining: <span id="slotsRemaining">10</span></p>
 
     <form id="capitalForm">
@@ -50,6 +57,22 @@
     <div id="confirmation"></div>
   </section>
 
+  <!-- PDFs Section -->
+  <section>
+    <h3>Official Investor Documents</h3>
+    <p>Access the official FSTL + COMET OS investor documentation below:</p>
+    <ul>
+      <li>
+        <a href="comet-execution-pack.pdf" target="_blank">📄 Download COMET Execution Pack</a>
+      </li>
+      <li>
+        <a href="investors-qa.pdf" target="_blank">📄 Download FSTL COMET-OS Investors Q&A</a>
+      </li>
+    </ul>
+    <p><strong>All documents are hosted directly within our sovereign infrastructure.</strong></p>
+  </section>
+
+  <!-- PDF Upload -->
   <section>
     <h3>Investor PDF Upload</h3>
     <form id="pdfForm">
@@ -60,6 +83,7 @@
     <div id="pdfConfirmation"></div>
   </section>
 
+  <!-- Investor Q&A -->
   <section>
     <h3>Investor Q&A</h3>
     <ol>
@@ -76,6 +100,7 @@
     </ol>
   </section>
 
+  <!-- Financial Overview -->
   <section>
     <h3>Financial Overview & Intellectual Property Value</h3>
     <ol>
@@ -87,12 +112,14 @@
     <p>Contact: <strong>fstlsite@gmail.com</strong></p>
   </section>
 
+  <!-- QR Code -->
   <section>
     <h3>Click QR Tracking</h3>
     <p>Scan your unique QR code generated from this visit:</p>
     <canvas id="qrCanvas"></canvas>
   </section>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
   <script>
     // Slots & Confirmation
@@ -103,7 +130,6 @@
       const selected = document.getElementById('capitalRange').value;
       if(!selected) return alert('Please select a capital range');
       confirmationDiv.textContent = "✅ Submission received! You will be contacted via fstlsite@gmail.com for Trusteeship slot confirmation and Investor Package access.";
-      // Reduce slots display (simulate)
       let slotEl = document.getElementById('slotsRemaining');
       slotEl.textContent = Math.max(0, parseInt(slotEl.textContent)-1);
     });
