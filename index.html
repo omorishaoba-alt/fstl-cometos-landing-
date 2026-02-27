@@ -106,4 +106,91 @@
       <li>Investor protection? COMET OS operates under FSTL Title Insurance protocols; fully auditable.</li>
       <li>Can I invest outside Nigeria? Yes, in USD; allocation reviewed for compliance.</li>
       <li>Dependence on social media? No, fully sovereign.</li>
-      <
+      <li>Trustee slot confirmation? Via <strong>fstlsite@gmail.com</strong>.</li>
+      <li>Slots transferable? No, personal and non-transferable.</li>
+      <li>Investor Package delivery? Immediately after slot confirmation.</li>
+    </ol>
+  </section>
+
+  <!-- Financial Overview -->
+  <section>
+    <h3 class="section-title">Financial Overview & Intellectual Property Value</h3>
+    <ol>
+      <li>COMET OS IP Valuation: $25M – $50M</li>
+      <li>ROI Potential: Governance, privileged packages, early monetization</li>
+      <li>Sovereign Revenue Streams: Verification fees, data services, partnerships with DFIs</li>
+      <li>Risk & Oversight: Board ensures full oversight of capital deployment and IP protection</li>
+    </ol>
+    <p>Contact: <strong>fstlsite@gmail.com</strong></p>
+  </section>
+
+  <!-- QR Click Tracking -->
+  <section>
+    <h3 class="section-title">Click QR Tracking</h3>
+    <p>Scan your unique QR code generated from this visit:</p>
+    <canvas id="qrCanvas"></canvas>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script>
+    // Slots & Confirmation
+    let slotsRemaining = 10;
+    const confirmationDiv = document.getElementById('confirmation');
+    document.getElementById('capitalForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const selected = document.getElementById('capitalRange').value;
+      if(!selected) return alert('Please select a capital range');
+      confirmationDiv.textContent = "✅ Submission received! Contact via fstlsite@gmail.com for slot confirmation and Investor Package access.";
+      document.getElementById('slotsRemaining').textContent = Math.max(0, --slotsRemaining);
+    });
+
+    // Investor PDF Upload
+    document.getElementById('pdfForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const fileInput = document.getElementById('pdfUpload');
+      if(fileInput.files.length === 0) return alert('Please select a PDF to upload');
+      document.getElementById('pdfConfirmation').textContent = "✅ PDF uploaded successfully!";
+      fileInput.value = '';
+    });
+
+    // Visitor QR Code
+    const canvas = document.getElementById('qrCanvas');
+    const uniqueID = 'FSTL-'+Date.now()+'-'+Math.floor(Math.random()*100000);
+    QRCode.toCanvas(canvas, uniqueID, function(error){
+      if(error) console.error(error);
+    });
+
+    // Tenant / Buyer / Owner Verification QR
+    document.getElementById('verificationForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const fullName = document.getElementById('fullName').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const nin = document.getElementById('nin').value;
+      const bvn = document.getElementById('bvn').value;
+      const bankAccount = document.getElementById('bankAccount').value;
+      const bankName = document.getElementById('bankName').value;
+      const rentAmount = document.getElementById('rentAmount').value;
+      const propertyId = document.getElementById('propertyId').value;
+
+      if(!fullName||!phone||!email||!nin||!bvn||!bankAccount||!bankName||!rentAmount||!propertyId){
+        document.getElementById('verificationAlert').textContent = "⚠️ Please complete all fields";
+        return;
+      }
+
+      const verificationID = 'VER-'+Date.now()+'-'+Math.floor(Math.random()*100000);
+      QRCode.toCanvas(document.getElementById('verificationQR'), verificationID, function(error){
+        if(error) console.error(error);
+      });
+
+      document.getElementById('verificationAlert').textContent = `✅ Verification complete! QR generated. ID: ${verificationID}`;
+      console.log("Tenant/Buyer/Owner Verification:", {
+        fullName, phone, email, nin, bvn, bankAccount, bankName, rentAmount, propertyId, verificationID
+      });
+      // Here you can integrate internal logging, alerts, PDF archival, and WhatsApp notification
+    });
+  </script>
+
+</body>
+</html>
