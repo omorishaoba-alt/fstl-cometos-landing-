@@ -3,167 +3,213 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FSTL COMET OS - World-Class Property Verification & Investment Platform</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+<title>FSTL COMET OS | Sovereign Property Verification Infrastructure</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f5f5f5; line-height:1.6; }
-.container { max-width: 900px; margin:auto; padding:20px; background:#fff; }
-h1,h2,h3 { color:#333; }
-button { background:#0073e6; color:#fff; border:none; padding:10px 20px; cursor:pointer; border-radius:5px; }
-input, select, textarea { width:100%; padding:10px; margin:5px 0 15px 0; border:1px solid #ccc; border-radius:5px; }
-section { margin-bottom:50px; }
-.faq-item { margin-bottom:10px; }
-@media (max-width: 600px) { .container { padding:10px; } button { width:100%; margin-bottom:10px; } }
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background:#0f172a;
+  color:#1e293b;
+  line-height:1.6;
+}
+
+.wrapper {
+  background:#ffffff;
+}
+
+.container {
+  max-width:1100px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+h1 { font-size:42px; font-weight:700; margin-bottom:20px; color:#0f172a; }
+h2 { font-size:28px; font-weight:600; margin-bottom:20px; color:#0f172a; }
+h3 { font-size:20px; font-weight:600; margin-bottom:10px; }
+p { margin-bottom:15px; color:#475569; }
+
+.hero {
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  color:#fff;
+  text-align:center;
+  padding:120px 20px;
+}
+
+.hero h1 { color:#fff; font-size:46px; }
+.hero p { color:#cbd5e1; font-size:18px; }
+
+.btn {
+  display:inline-block;
+  padding:14px 28px;
+  margin:10px;
+  background:#2563eb;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:600;
+  transition:0.3s;
+}
+.btn:hover { background:#1d4ed8; }
+
+.section {
+  border-bottom:1px solid #e2e8f0;
+}
+
+.card {
+  background:#f8fafc;
+  padding:30px;
+  border-radius:8px;
+  margin-bottom:20px;
+}
+
+ul { padding-left:20px; margin-bottom:20px; }
+li { margin-bottom:8px; }
+
+form input, form select, form textarea {
+  width:100%;
+  padding:12px;
+  margin-bottom:16px;
+  border:1px solid #cbd5e1;
+  border-radius:6px;
+  font-family:inherit;
+}
+
+form button {
+  width:100%;
+  padding:14px;
+  background:#0f172a;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+form button:hover {
+  background:#1e293b;
+}
+
+.footer {
+  background:#0f172a;
+  color:#cbd5e1;
+  padding:60px 20px;
+  text-align:center;
+  font-size:14px;
+}
+
+@media(max-width:768px){
+  h1 { font-size:34px; }
+  .hero h1 { font-size:36px; }
+}
 </style>
 </head>
+
 <body>
 
-<div class="container">
+<div class="hero">
+  <h1>FSTL COMET OS</h1>
+  <p>Sovereign-Grade Land & Property Verification Infrastructure</p>
+  <a href="#verification" class="btn">Start Verification</a>
+  <a href="#investor" class="btn">Investor Brief</a>
+</div>
 
-<!-- Hero Section -->
-<section id="hero">
-<h1>FSTL COMET OS — World-Class Land & Property Verification Infrastructure</h1>
-<p>Nigeria Pilot | Revenue-Generating Verification | QR-Secured Receipts | Bank-Confirmed Payments</p>
-<button onclick="document.getElementById('verification-form').scrollIntoView();">Start Verification</button>
-<button onclick="document.getElementById('investor-form').scrollIntoView();">Request Investor Brief</button>
-</section>
+<div class="wrapper">
 
-<!-- Enterprise Status -->
-<section id="enterprise-status">
-<h2>Enterprise Status</h2>
-<ul>
-<li>Nigeria pilot, globally scalable</li>
-<li>QR-secured receipts, bank-confirmed payments</li>
-<li>Revenue-generating verification engine live</li>
-<li>Governance & transparency protocols enforced</li>
-</ul>
-</section>
+<div class="container section">
+  <h2>Enterprise Positioning</h2>
+  <p>
+  COMET OS is a controlled verification infrastructure developed by FSTL to eliminate fraud,
+  secure property transactions, and ensure bank-confirmed payment traceability.
+  </p>
+  <div class="card">
+    <ul>
+      <li>Nigeria Pilot Deployment</li>
+      <li>QR-Secured Receipt Infrastructure</li>
+      <li>Bank-Confirmed Payment Model</li>
+      <li>Auditable Governance Architecture</li>
+      <li>Globally Scalable Framework</li>
+    </ul>
+  </div>
+</div>
 
-<!-- Tenant / Buyer / Owner Verification Form -->
-<section id="revenue-engine">
-<h2>Tenant / Buyer / Owner Verification</h2>
-<form id="verification-form">
-<label>Full Name*</label>
-<input type="text" required>
-<label>Phone (OTP)*</label>
-<input type="tel" required>
-<button type="button" id="send-otp">Send OTP</button>
-<label>Enter OTP*</label>
-<input type="text" id="otp-input" required>
-<label>Email*</label>
-<input type="email" required>
-<label>NIN*</label>
-<input type="text" required>
-<label>BVN*</label>
-<input type="text" required>
-<label>Bank Account Number*</label>
-<input type="text" required>
-<label>Bank Name*</label>
-<input type="text" required>
-<label>Proposed Rent Amount*</label>
-<input type="number" required>
-<label>Property Location / COMET OS ID*</label>
-<input type="text" required>
-<button type="submit">Submit Verification</button>
-</form>
-</section>
+<div class="container section" id="verification">
+  <h2>Tenant / Buyer / Owner Verification</h2>
+  <form>
+    <input type="text" placeholder="Full Name" required>
+    <input type="tel" placeholder="Phone (OTP Required)" required>
+    <input type="email" placeholder="Email" required>
+    <input type="text" placeholder="NIN" required>
+    <input type="text" placeholder="BVN" required>
+    <input type="text" placeholder="Bank Account Number" required>
+    <input type="text" placeholder="Bank Name" required>
+    <input type="number" placeholder="Proposed Rent Amount" required>
+    <input type="text" placeholder="Property Location / COMET OS ID" required>
+    <button type="submit">Submit Verification</button>
+  </form>
+</div>
 
-<!-- Structured Capitalization / Funding -->
-<section id="funding">
-<h2>Structured Capitalization</h2>
-<p>FSTL is entering structured capitalization to accelerate sovereign-grade verification infrastructure deployment.</p>
-<ul>
-<li>Backend infrastructure & data security</li>
-<li>Registry indexing & mobile distribution</li>
-<li>Operational staffing & transaction oversight</li>
-<li>Legal & regulatory alignment</li>
-<li>National pilot deployment</li>
-</ul>
-<p>Trustee Slots: 10 | Capital Ranges: $100K-$250K, $250K-$500K, $500K+</p>
-</section>
+<div class="container section">
+  <h2>Structured Capitalization</h2>
+  <p>
+  FSTL is entering structured capitalization to accelerate secure national deployment.
+  This is strategic enterprise expansion funding.
+  </p>
+  <div class="card">
+    <ul>
+      <li>Secure Infrastructure & Encryption</li>
+      <li>Registry Indexing & Compliance</li>
+      <li>Operational Verification Teams</li>
+      <li>Audit & Transaction Monitoring</li>
+      <li>National Deployment Preparation</li>
+    </ul>
+  </div>
+  <p><strong>Trustee Slots Limited to 10</strong></p>
+</div>
 
-<!-- Investor / Trustee Capture -->
-<section id="investor">
-<h2>Investor / Trustee Capture</h2>
-<form id="investor-form">
-<label>Name*</label>
-<input type="text" required>
-<label>Email*</label>
-<input type="email" required>
-<label>Phone*</label>
-<input type="tel" required>
-<label>Investment Range*</label>
-<select required>
-<option value="100-250">$100K-$250K</option>
-<option value="250-500">$250K-$500K</option>
-<option value="500+">$500K+</option>
-</select>
-<label>Message</label>
-<textarea></textarea>
-<button type="submit">Submit Interest</button>
-</form>
-</section>
+<div class="container section" id="investor">
+  <h2>Investor / Trustee Expression of Interest</h2>
+  <form>
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="tel" placeholder="Phone" required>
+    <select required>
+      <option>$100K - $250K</option>
+      <option>$250K - $500K</option>
+      <option>$500K+</option>
+    </select>
+    <textarea placeholder="Message"></textarea>
+    <button type="submit">Submit Interest</button>
+  </form>
+</div>
 
-<!-- Contact -->
-<section id="contact">
-<h2>Contact & Transparency</h2>
-<p>Address: No. 19 Egbor Avenue, Off Benoni Hospital Road, GRA, Benin City, Edo State, Nigeria</p>
-<p>Email: fstlsite@gmail.com</p>
-<p>Phone: +2348035888622</p>
-<p>All payments must go to <strong>FSTL First Bank Account: 2025222557</strong> with QR-secured receipt verification.</p>
-</section>
+<div class="container section">
+  <h2>Security & Transparency</h2>
+  <p>
+  All payments must go directly to FSTL First Bank Account: <strong>2025222557</strong>.
+  No agent is authorized to collect funds.
+  QR-secured receipts are generated only after bank confirmation.
+  </p>
+</div>
 
-<!-- FAQ -->
-<section id="faq">
-<h2>Frequently Asked Questions</h2>
-<div class="faq-item"><strong>Q:</strong> Do you hold client funds?<br><strong>A:</strong> No — all payments go directly to FSTL First Bank.</div>
-<div class="faq-item"><strong>Q:</strong> When is receipt issued?<br><strong>A:</strong> After bank confirmation only, QR-secured.</div>
-<div class="faq-item"><strong>Q:</strong> Are receipts forge-proof?<br><strong>A:</strong> Yes, QR-secured & database-linked.</div>
-<div class="faq-item"><strong>Q:</strong> Can agents collect payments?<br><strong>A:</strong> No.</div>
-<div class="faq-item"><strong>Q:</strong> How long does verification take?<br><strong>A:</strong> 24-48 hours depending on location.</div>
-<div class="faq-item"><strong>Q:</strong> Is this survival funding?<br><strong>A:</strong> No, this is structured enterprise capitalization.</div>
-<div class="faq-item"><strong>Q:</strong> Are funds held by third parties?<br><strong>A:</strong> No.</div>
-<div class="faq-item"><strong>Q:</strong> Trustee participation?<br><strong>A:</strong> Limited to 10 slots, private & structured.</div>
-<div class="faq-item"><strong>Q:</strong> Nigeria = pilot. Global posture?<br><strong>A:</strong> Nigeria is stress-test; enterprise is globally designed.</div>
-<div class="faq-item"><strong>Q:</strong> COMET OS = enterprise?<br><strong>A:</strong> No, it is a distribution layer only.</div>
-</section>
+<div class="container section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="card">
+    <p><strong>Do you hold client funds?</strong><br>No. Funds go directly to FSTL First Bank.</p>
+    <p><strong>When is a receipt issued?</strong><br>Only after confirmed payment verification.</p>
+    <p><strong>Is data encrypted?</strong><br>Yes. Secure storage and controlled administrative access.</p>
+    <p><strong>Verification time?</strong><br>24–48 hours depending on documentation.</p>
+  </div>
+</div>
 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script>
-// OTP & Payment placeholders for live API integration
-let currentOTP = null;
-document.getElementById('send-otp').addEventListener('click', function(){
-  // Placeholder for live OTP API
-  currentOTP = Math.floor(100000 + Math.random() * 900000).toString();
-  alert('OTP sent (simulate API): ' + currentOTP);
-});
-
-const verificationForm = document.getElementById('verification-form');
-verificationForm.addEventListener('submit', async function(e){
-  e.preventDefault();
-
-  const enteredOTP = document.getElementById('otp-input').value;
-  if(enteredOTP !== currentOTP){ alert('Invalid OTP. Submission blocked.'); return; }
-
-  // Placeholder: Confirm payment via First Bank API
-  let paymentConfirmed = confirm('Simulate payment confirmation to FSTL First Bank?');
-  if(!paymentConfirmed){ alert('Payment not confirmed.'); return; }
-
-  // Generate QR receipt
-  let qrWindow = window.open('', '', 'width=300,height=300');
-  qrWindow.document.write('<h3>QR Receipt</h3><div id="qrcode"></div>');
-  new QRCode(qrWindow.document.getElementById('qrcode'), 'FSTL-Receipt-' + new Date().getTime());
-  alert('Verification submitted. QR receipt generated.');
-});
-
-const investorForm = document.getElementById('investor-form');
-investorForm.addEventListener('submit', function(e){
-  e.preventDefault();
-  alert('Investor interest submitted. FSTL team will contact for structured participation.');
-});
-</script>
+<div class="footer">
+© 2026 FSTL. All Rights Reserved.<br>
+COMET OS is a verification infrastructure system operated under FSTL governance.
+</div>
 
 </body>
 </html>
