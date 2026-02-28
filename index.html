@@ -9,206 +9,197 @@
 
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
-body {
-  font-family: 'Inter', sans-serif;
-  background:#0f172a;
-  color:#1e293b;
-  line-height:1.6;
-}
-
-.wrapper {
-  background:#ffffff;
-}
-
-.container {
-  max-width:1100px;
-  margin:auto;
-  padding:80px 20px;
-}
-
-h1 { font-size:42px; font-weight:700; margin-bottom:20px; color:#0f172a; }
-h2 { font-size:28px; font-weight:600; margin-bottom:20px; color:#0f172a; }
-h3 { font-size:20px; font-weight:600; margin-bottom:10px; }
-p { margin-bottom:15px; color:#475569; }
-
-.hero {
-  background:linear-gradient(135deg,#0f172a,#1e293b);
-  color:#fff;
-  text-align:center;
-  padding:120px 20px;
-}
-
-.hero h1 { color:#fff; font-size:46px; }
-.hero p { color:#cbd5e1; font-size:18px; }
-
-.btn {
-  display:inline-block;
-  padding:14px 28px;
-  margin:10px;
-  background:#2563eb;
-  color:#fff;
-  text-decoration:none;
-  border-radius:6px;
-  font-weight:600;
-  transition:0.3s;
-}
-.btn:hover { background:#1d4ed8; }
-
-.section {
-  border-bottom:1px solid #e2e8f0;
-}
-
-.card {
-  background:#f8fafc;
-  padding:30px;
-  border-radius:8px;
-  margin-bottom:20px;
-}
-
+body { font-family:'Inter',sans-serif; background:#f8fafc; color:#1e293b; line-height:1.6; }
+.container { max-width:1100px; margin:auto; padding:80px 20px; }
+.hero { background:#0f172a; color:#fff; text-align:center; padding:120px 20px; }
+.hero h1 { font-size:44px; margin-bottom:20px; }
+.hero p { font-size:18px; color:#cbd5e1; margin-bottom:30px; }
+.btn { display:inline-block; padding:14px 28px; margin:10px; background:#2563eb; color:#fff; border-radius:6px; text-decoration:none; font-weight:600; }
+.section { border-bottom:1px solid #e2e8f0; }
+h2 { font-size:28px; margin-bottom:20px; }
+.card { background:#ffffff; padding:30px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.05); margin-bottom:20px; }
 ul { padding-left:20px; margin-bottom:20px; }
 li { margin-bottom:8px; }
-
 form input, form select, form textarea {
-  width:100%;
-  padding:12px;
-  margin-bottom:16px;
-  border:1px solid #cbd5e1;
-  border-radius:6px;
-  font-family:inherit;
+  width:100%; padding:12px; margin-bottom:16px;
+  border:1px solid #cbd5e1; border-radius:6px;
 }
-
 form button {
-  width:100%;
-  padding:14px;
-  background:#0f172a;
-  color:#fff;
-  border:none;
-  border-radius:6px;
-  font-weight:600;
-  cursor:pointer;
+  padding:14px; width:100%;
+  background:#0f172a; color:#fff; border:none;
+  border-radius:6px; font-weight:600;
 }
-
-form button:hover {
-  background:#1e293b;
-}
-
 .footer {
-  background:#0f172a;
-  color:#cbd5e1;
-  padding:60px 20px;
-  text-align:center;
-  font-size:14px;
-}
-
-@media(max-width:768px){
-  h1 { font-size:34px; }
-  .hero h1 { font-size:36px; }
+  background:#0f172a; color:#cbd5e1;
+  text-align:center; padding:60px 20px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <div class="hero">
   <h1>FSTL COMET OS</h1>
   <p>Sovereign-Grade Land & Property Verification Infrastructure</p>
   <a href="#verification" class="btn">Start Verification</a>
-  <a href="#investor" class="btn">Investor Brief</a>
+  <a href="#capital" class="btn">Investor Brief</a>
 </div>
 
-<div class="wrapper">
-
+<!-- EXECUTIVE OVERVIEW -->
 <div class="container section">
-  <h2>Enterprise Positioning</h2>
-  <p>
-  COMET OS is a controlled verification infrastructure developed by FSTL to eliminate fraud,
-  secure property transactions, and ensure bank-confirmed payment traceability.
-  </p>
-  <div class="card">
-    <ul>
-      <li>Nigeria Pilot Deployment</li>
-      <li>QR-Secured Receipt Infrastructure</li>
-      <li>Bank-Confirmed Payment Model</li>
-      <li>Auditable Governance Architecture</li>
-      <li>Globally Scalable Framework</li>
-    </ul>
-  </div>
+<h2>Executive Overview</h2>
+<div class="card">
+<p>
+COMET OS is FSTL’s structured verification and registry intelligence infrastructure
+designed to eliminate property fraud, enforce bank-confirmed payments, and create
+a traceable audit system for land and tenancy transactions.
+</p>
+<p>
+Nigeria serves as the pilot deployment market, with global scalability engineered into system architecture.
+</p>
+</div>
 </div>
 
+<!-- PROBLEM -->
+<div class="container section">
+<h2>The Problem</h2>
+<div class="card">
+<ul>
+<li>Widespread property fraud and forged receipts</li>
+<li>Unverified tenant and landlord identities</li>
+<li>Cash-based rent payments lacking traceability</li>
+<li>Absence of structured transaction audit logs</li>
+</ul>
+</div>
+</div>
+
+<!-- SOLUTION -->
+<div class="container section">
+<h2>The COMET OS Solution</h2>
+<div class="card">
+<ul>
+<li>OTP-verified identity submission</li>
+<li>Mandatory bank-confirmed payment model</li>
+<li>QR-secured receipt generation</li>
+<li>Database-linked transaction validation</li>
+<li>Audit-ready logging framework</li>
+</ul>
+</div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="container section">
+<h2>How It Works</h2>
+<div class="card">
+<ol>
+<li>User submits verification details</li>
+<li>Phone number confirmed via OTP</li>
+<li>Payment made directly to FSTL First Bank</li>
+<li>Bank confirmation validated</li>
+<li>QR-secured receipt issued</li>
+<li>Record stored in auditable database</li>
+</ol>
+</div>
+</div>
+
+<!-- REVENUE MODEL -->
+<div class="container section">
+<h2>Revenue Model</h2>
+<div class="card">
+<p>
+Revenue is generated from structured verification services and capitalization participation.
+All payments are direct-to-bank. No third-party wallet system exists.
+</p>
+</div>
+</div>
+
+<!-- GOVERNANCE -->
+<div class="container section">
+<h2>Governance & Compliance</h2>
+<div class="card">
+<ul>
+<li>Direct bank settlement model</li>
+<li>No agent fund collection permitted</li>
+<li>Administrative access controls</li>
+<li>Audit trail for every transaction</li>
+<li>Regulatory alignment preparation</li>
+</ul>
+</div>
+</div>
+
+<!-- SECURITY -->
+<div class="container section">
+<h2>Security Architecture</h2>
+<div class="card">
+<ul>
+<li>Encrypted storage of identity data</li>
+<li>Controlled backend administrative access</li>
+<li>Receipt-database cross verification</li>
+<li>Payment confirmation requirement</li>
+</ul>
+</div>
+</div>
+
+<!-- CAPITALIZATION -->
+<div class="container section" id="capital">
+<h2>Structured Capitalization</h2>
+<div class="card">
+<p>
+FSTL is entering structured enterprise capitalization to scale infrastructure deployment.
+</p>
+<p><strong>Trustee Slots Limited to 10</strong></p>
+<ul>
+<li>$100K – $250K</li>
+<li>$250K – $500K</li>
+<li>$500K+</li>
+</ul>
+</div>
+</div>
+
+<!-- VERIFICATION FORM -->
 <div class="container section" id="verification">
-  <h2>Tenant / Buyer / Owner Verification</h2>
-  <form>
-    <input type="text" placeholder="Full Name" required>
-    <input type="tel" placeholder="Phone (OTP Required)" required>
-    <input type="email" placeholder="Email" required>
-    <input type="text" placeholder="NIN" required>
-    <input type="text" placeholder="BVN" required>
-    <input type="text" placeholder="Bank Account Number" required>
-    <input type="text" placeholder="Bank Name" required>
-    <input type="number" placeholder="Proposed Rent Amount" required>
-    <input type="text" placeholder="Property Location / COMET OS ID" required>
-    <button type="submit">Submit Verification</button>
-  </form>
+<h2>Verification Submission</h2>
+<form>
+<input type="text" placeholder="Full Name" required>
+<input type="tel" placeholder="Phone" required>
+<input type="email" placeholder="Email" required>
+<input type="text" placeholder="NIN" required>
+<input type="text" placeholder="BVN" required>
+<input type="text" placeholder="Bank Account Number" required>
+<input type="text" placeholder="Bank Name" required>
+<input type="number" placeholder="Proposed Rent Amount" required>
+<input type="text" placeholder="Property Location / COMET OS ID" required>
+<button type="submit">Submit Verification</button>
+</form>
 </div>
 
+<!-- FAQ -->
 <div class="container section">
-  <h2>Structured Capitalization</h2>
-  <p>
-  FSTL is entering structured capitalization to accelerate secure national deployment.
-  This is strategic enterprise expansion funding.
-  </p>
-  <div class="card">
-    <ul>
-      <li>Secure Infrastructure & Encryption</li>
-      <li>Registry Indexing & Compliance</li>
-      <li>Operational Verification Teams</li>
-      <li>Audit & Transaction Monitoring</li>
-      <li>National Deployment Preparation</li>
-    </ul>
-  </div>
-  <p><strong>Trustee Slots Limited to 10</strong></p>
+<h2>Frequently Asked Questions</h2>
+<div class="card">
+<p><strong>Do you hold funds?</strong><br>No. Payments go directly to FSTL First Bank Account 2025222557.</p>
+<p><strong>Receipt issued when?</strong><br>Only after confirmed bank settlement.</p>
+<p><strong>Is Nigeria permanent market?</strong><br>Nigeria is pilot. System architecture is global.</p>
+<p><strong>Data security?</strong><br>Encrypted storage with controlled administrative access.</p>
+</div>
 </div>
 
-<div class="container section" id="investor">
-  <h2>Investor / Trustee Expression of Interest</h2>
-  <form>
-    <input type="text" placeholder="Full Name" required>
-    <input type="email" placeholder="Email" required>
-    <input type="tel" placeholder="Phone" required>
-    <select required>
-      <option>$100K - $250K</option>
-      <option>$250K - $500K</option>
-      <option>$500K+</option>
-    </select>
-    <textarea placeholder="Message"></textarea>
-    <button type="submit">Submit Interest</button>
-  </form>
-</div>
-
+<!-- CONTACT -->
 <div class="container section">
-  <h2>Security & Transparency</h2>
-  <p>
-  All payments must go directly to FSTL First Bank Account: <strong>2025222557</strong>.
-  No agent is authorized to collect funds.
-  QR-secured receipts are generated only after bank confirmation.
-  </p>
+<h2>Contact & Transparency</h2>
+<div class="card">
+<p>
+No. 19 Egbor Avenue, Off Benoni Hospital Road, GRA, Benin City, Edo State, Nigeria<br>
+Email: fstlsite@gmail.com<br>
+Phone: +2348035888622
+</p>
 </div>
-
-<div class="container section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="card">
-    <p><strong>Do you hold client funds?</strong><br>No. Funds go directly to FSTL First Bank.</p>
-    <p><strong>When is a receipt issued?</strong><br>Only after confirmed payment verification.</p>
-    <p><strong>Is data encrypted?</strong><br>Yes. Secure storage and controlled administrative access.</p>
-    <p><strong>Verification time?</strong><br>24–48 hours depending on documentation.</p>
-  </div>
-</div>
-
 </div>
 
 <div class="footer">
 © 2026 FSTL. All Rights Reserved.<br>
-COMET OS is a verification infrastructure system operated under FSTL governance.
+COMET OS is a verification infrastructure operated under FSTL governance.
 </div>
 
 </body>
