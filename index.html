@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" x-data="fstlLanding()">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +19,7 @@ body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
 .accordion-content.show { display:block; }
 </style>
 </head>
-<body x-data="fstlLanding()">
+<body>
 
 <!-- HERO -->
 <section class="bg-gradient-to-r from-blue-800 to-blue-500 text-white p-12 text-center">
@@ -112,17 +112,19 @@ function fstlLanding() {
       { q:"Are receipts forge-proof?", a:"Yes, QR-secured & database-linked.", open:false },
       { q:"Can agents collect payments?", a:"No.", open:false },
       { q:"Verification time?", a:"24-48 hours depending on location.", open:false },
+      { q:"Is this survival funding?", a:"No — structured enterprise capitalization.", open:false },
+      { q:"Trustee participation?", a:"Limited to 10 slots, private & structured.", open:false },
+      { q:"Nigeria = pilot. Global posture?", a:"Nigeria is stress-test; enterprise is globally designed.", open:false },
+      { q:"COMET OS = enterprise?", a:"No, it is a distribution layer only.", open:false },
     ],
     sendOTP() { alert("OTP sent to phone — demo only"); },
     toggleFAQ(item) { item.open = !item.open; },
     submitVerification() {
-      // simulate storing to backend
+      // simulate backend save
       console.log("Verification submitted:", this.verification);
-      // Generate QR receipt (simulated)
+      // generate QR receipt
       const qrData = JSON.stringify(this.verification);
-      QRCode.toCanvas(document.getElementById('qrCanvas'), qrData, function (error) {
-        if(error) console.error(error);
-      });
+      QRCode.toCanvas(document.getElementById('qrCanvas'), qrData, function (error) { if(error) console.error(error); });
       this.qrGenerated = true;
       alert("Verification submitted! QR receipt generated (demo).");
     },
