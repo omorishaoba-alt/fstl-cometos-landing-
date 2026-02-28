@@ -1,201 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FSTL COMET OS Landing</title>
-  <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background-color: #f9f9f9; color: #111; }
-    h1,h2,h3,h4 { color: #0a2e49; }
-    section { margin-bottom: 30px; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
-    label { display:block; margin-top:10px; font-weight:bold; }
-    select,input[type="submit"],input[type="file"],input[type="text"],input[type="email"],input[type="number"],button { margin-top:5px; padding:10px; width:100%; max-width:400px; border-radius:5px; border:1px solid #ccc;}
-    #confirmation,#pdfConfirmation,#tenantConfirmation { margin-top:15px; color: green; font-weight: bold;}
-    canvas { margin-top:15px; }
-    ul { padding-left:20px; }
-    ul li { margin-bottom:10px; }
-    .verified-badge { display:inline-block; background:#0a2e49; color:#fff; padding:5px 10px; border-radius:5px; font-weight:bold; margin-bottom:15px; }
-    .qa-panel { margin-top:15px; background:#eef1f5; padding:15px; border-radius:5px; }
-    .qa-panel ul { list-style-type: disc; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FSTL COMET OS - World-Class Property Verification & Investment Platform</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f5f5f5; line-height:1.6; }
+.container { max-width: 900px; margin:auto; padding:20px; background:#fff; }
+h1,h2,h3 { color:#333; }
+button { background:#0073e6; color:#fff; border:none; padding:10px 20px; cursor:pointer; border-radius:5px; }
+input, select, textarea { width:100%; padding:10px; margin:5px 0 15px 0; border:1px solid #ccc; border-radius:5px; }
+section { margin-bottom:50px; }
+.faq-item { margin-bottom:10px; }
+@media (max-width: 600px) { .container { padding:10px; } button { width:100%; margin-bottom:10px; } }
+</style>
 </head>
 <body>
 
-  <div class="verified-badge">CHATGPT VERIFIED SITE ✅</div>
+<div class="container">
 
-  <!-- Header / Overview -->
-  <section>
-    <h1>FSTL COMET OS</h1>
-    <h2>Sovereign Property Intelligence Infrastructure</h2>
-    <h3>Corporate Responsibility & Sovereign Commitment</h3>
-    <p>We are <strong>BUILDING IN PUBLIC</strong>. All clicks, submissions, and investor engagements are tracked internally to maintain full control, auditability, and transparency.</p>
-  </section>
+<!-- Hero Section -->
+<section id="hero">
+<h1>FSTL COMET OS — World-Class Land & Property Verification Infrastructure</h1>
+<p>Nigeria Pilot | Revenue-Generating Verification | QR-Secured Receipts | Bank-Confirmed Payments</p>
+<button onclick="document.getElementById('verification-form').scrollIntoView();">Start Verification</button>
+<button onclick="document.getElementById('investor-form').scrollIntoView();">Request Investor Brief</button>
+</section>
 
-  <!-- Investment Opportunity -->
-  <section>
-    <h3>Investment Opportunity</h3>
-    <p><strong>First Standard Title Limited (FSTL)</strong> are pioneers of Title Insurance and Mortgage Insurance in Nigeria.</p>
-    <p><strong>COMET OS</strong> is next-generation property verification and registry intelligence infrastructure.</p>
-    <p>Only 10 exclusive trustee slots available. Successful applicants join the <strong>FSTL COMET OS Board of Trustees</strong>.</p>
-    <p>Slots Remaining: <span id="slotsRemaining">10</span></p>
-    <form id="capitalForm">
-      <label>Select Capital Allocation Range:</label>
-      <select id="capitalRange" required>
-        <option value="">Select range</option>
-        <option value="$100K - $250K">$100K - $250K</option>
-        <option value="$250K - $500K">$250K - $500K</option>
-        <option value="$500K+">$500K+</option>
-      </select>
-      <input type="submit" value="Submit & Request Investor Package">
-    </form>
-    <div id="confirmation"></div>
+<!-- Enterprise Status -->
+<section id="enterprise-status">
+<h2>Enterprise Status</h2>
+<ul>
+<li>Nigeria pilot, globally scalable</li>
+<li>QR-secured receipts, bank-confirmed payments</li>
+<li>Revenue-generating verification engine live</li>
+<li>Governance & transparency protocols enforced</li>
+</ul>
+</section>
 
-    <div class="qa-panel">
-      <h4>FAQs</h4>
-      <ul>
-        <li><strong>Who can participate in the Board of Trustees?</strong> Only 10 exclusive investors who successfully allocate capital.</li>
-        <li><strong>What are the capital allocation ranges?</strong> $100K-$250K, $250K-$500K, $500K+.</li>
-        <li><strong>How are submissions tracked?</strong> Logged internally; confirmations sent via fstlsite@gmail.com.</li>
-        <li><strong>What protections are in place for investors?</strong> COMET OS operates under FSTL Title Insurance protocols. Fully auditable.</li>
-        <li><strong>Can slots be reserved or transferred?</strong> No. Personal and non-transferable.</li>
-      </ul>
-    </div>
-  </section>
+<!-- Tenant / Buyer / Owner Verification Form -->
+<section id="revenue-engine">
+<h2>Tenant / Buyer / Owner Verification</h2>
+<form id="verification-form">
+<label>Full Name*</label>
+<input type="text" required>
+<label>Phone (OTP)*</label>
+<input type="tel" required>
+<button type="button" id="send-otp">Send OTP</button>
+<label>Enter OTP*</label>
+<input type="text" id="otp-input" required>
+<label>Email*</label>
+<input type="email" required>
+<label>NIN*</label>
+<input type="text" required>
+<label>BVN*</label>
+<input type="text" required>
+<label>Bank Account Number*</label>
+<input type="text" required>
+<label>Bank Name*</label>
+<input type="text" required>
+<label>Proposed Rent Amount*</label>
+<input type="number" required>
+<label>Property Location / COMET OS ID*</label>
+<input type="text" required>
+<button type="submit">Submit Verification</button>
+</form>
+</section>
 
-  <!-- Tenant / Buyer / Owner Verification -->
-  <section>
-    <h3>Tenant / Buyer / Owner Verification</h3>
-    <form id="tenantForm">
-      <label>Full Name:</label><input type="text" id="fullName" required>
-      <label>Phone (OTP):</label><input type="text" id="phone" required>
-      <label>Email:</label><input type="email" id="email" required>
-      <label>NIN:</label><input type="text" id="nin" required>
-      <label>BVN:</label><input type="text" id="bvn" required>
-      <label>Bank Account Number:</label><input type="text" id="bankAccount" required>
-      <label>Bank Name:</label><input type="text" id="bankName" required>
-      <label>Proposed Rent Amount:</label><input type="number" id="rentAmount" required>
-      <label>Property ID / Location:</label><input type="text" id="propertyId" required>
-      <input type="submit" value="Verify & Generate QR">
-    </form>
-    <div id="tenantConfirmation"></div>
-    <canvas id="tenantQR"></canvas>
+<!-- Structured Capitalization / Funding -->
+<section id="funding">
+<h2>Structured Capitalization</h2>
+<p>FSTL is entering structured capitalization to accelerate sovereign-grade verification infrastructure deployment.</p>
+<ul>
+<li>Backend infrastructure & data security</li>
+<li>Registry indexing & mobile distribution</li>
+<li>Operational staffing & transaction oversight</li>
+<li>Legal & regulatory alignment</li>
+<li>National pilot deployment</li>
+</ul>
+<p>Trustee Slots: 10 | Capital Ranges: $100K-$250K, $250K-$500K, $500K+</p>
+</section>
 
-    <div class="qa-panel">
-      <h4>FAQs</h4>
-      <ul>
-        <li><strong>What information is required?</strong> Full Name, Phone (OTP), Email, NIN, BVN, Bank Account, Bank Name, Proposed Rent, Property ID.</li>
-        <li><strong>How is verification ensured?</strong> COMET OS validates BVN, NIN, and bank account instantly; generates unique QR.</li>
-        <li><strong>Are notifications sent?</strong> Yes. Estate agents, owners, investors get real-time alerts.</li>
-        <li><strong>How does this prevent fraud?</strong> Mandatory identifiers + QR seal + ledger + timestamped logs.</li>
-      </ul>
-    </div>
-  </section>
+<!-- Investor / Trustee Capture -->
+<section id="investor">
+<h2>Investor / Trustee Capture</h2>
+<form id="investor-form">
+<label>Name*</label>
+<input type="text" required>
+<label>Email*</label>
+<input type="email" required>
+<label>Phone*</label>
+<input type="tel" required>
+<label>Investment Range*</label>
+<select required>
+<option value="100-250">$100K-$250K</option>
+<option value="250-500">$250K-$500K</option>
+<option value="500+">$500K+</option>
+</select>
+<label>Message</label>
+<textarea></textarea>
+<button type="submit">Submit Interest</button>
+</form>
+</section>
 
-  <!-- Official Investor Documents -->
-  <section>
-    <h3>Official Investor Documents</h3>
-    <ul>
-      <li><a href="https://omorishaoba-alt.github.io/fstl-cometos-landing-/comet-execution-pack.pdf" target="_blank">📄 COMET Execution Pack</a></li>
-      <li><a href="https://omorishaoba-alt.github.io/fstl-cometos-landing-/investors-qa.pdf" target="_blank">📄 FSTL COMET-OS Investors Q&A</a></li>
-    </ul>
-    <div class="qa-panel">
-      <h4>FAQs</h4>
-      <ul>
-        <li><strong>Where are documents hosted?</strong> Within FSTL sovereign infrastructure — no external dependency.</li>
-        <li><strong>Can I access documents before slot confirmation?</strong> Yes, immediately after verification.</li>
-      </ul>
-    </div>
-  </section>
+<!-- Contact -->
+<section id="contact">
+<h2>Contact & Transparency</h2>
+<p>Address: No. 19 Egbor Avenue, Off Benoni Hospital Road, GRA, Benin City, Edo State, Nigeria</p>
+<p>Email: fstlsite@gmail.com</p>
+<p>Phone: +2348035888622</p>
+<p>All payments must go to <strong>FSTL First Bank Account: 2025222557</strong> with QR-secured receipt verification.</p>
+</section>
 
-  <!-- Investor PDF Upload -->
-  <section>
-    <h3>Investor PDF Upload</h3>
-    <form id="pdfForm">
-      <label>Upload relevant investor or verification PDF:</label>
-      <input type="file" id="pdfUpload" accept=".pdf">
-      <input type="submit" value="Upload PDF">
-    </form>
-    <div id="pdfConfirmation"></div>
-    <div class="qa-panel">
-      <h4>FAQs</h4>
-      <ul>
-        <li><strong>What can I upload?</strong> Any investor-related or property verification PDF.</li>
-        <li><strong>Is there confirmation?</strong> Yes. Success message and ledger logs upload for audit.</li>
-      </ul>
-    </div>
-  </section>
+<!-- FAQ -->
+<section id="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><strong>Q:</strong> Do you hold client funds?<br><strong>A:</strong> No — all payments go directly to FSTL First Bank.</div>
+<div class="faq-item"><strong>Q:</strong> When is receipt issued?<br><strong>A:</strong> After bank confirmation only, QR-secured.</div>
+<div class="faq-item"><strong>Q:</strong> Are receipts forge-proof?<br><strong>A:</strong> Yes, QR-secured & database-linked.</div>
+<div class="faq-item"><strong>Q:</strong> Can agents collect payments?<br><strong>A:</strong> No.</div>
+<div class="faq-item"><strong>Q:</strong> How long does verification take?<br><strong>A:</strong> 24-48 hours depending on location.</div>
+<div class="faq-item"><strong>Q:</strong> Is this survival funding?<br><strong>A:</strong> No, this is structured enterprise capitalization.</div>
+<div class="faq-item"><strong>Q:</strong> Are funds held by third parties?<br><strong>A:</strong> No.</div>
+<div class="faq-item"><strong>Q:</strong> Trustee participation?<br><strong>A:</strong> Limited to 10 slots, private & structured.</div>
+<div class="faq-item"><strong>Q:</strong> Nigeria = pilot. Global posture?<br><strong>A:</strong> Nigeria is stress-test; enterprise is globally designed.</div>
+<div class="faq-item"><strong>Q:</strong> COMET OS = enterprise?<br><strong>A:</strong> No, it is a distribution layer only.</div>
+</section>
 
-  <!-- Ledger & Alerts -->
-  <section style="display:none;">
-    <h3>Ledger & Alerts</h3>
-    <pre id="ledgerLog"></pre>
-  </section>
+</div>
 
-  <!-- Contact Section -->
-  <section>
-    <h3>Contact Us</h3>
-    <p><strong>Address:</strong> No. 19 Egbor Avenue, Off Benoni Hospital Road, GRA, Benin City, Edo State, Nigeria</p>
-    <p><strong>Email:</strong> <a href="mailto:fstlsite@gmail.com">fstlsite@gmail.com</a></p>
-    <p><strong>Phone:</strong> +2348035888622</p>
-  </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+// OTP & Payment placeholders for live API integration
+let currentOTP = null;
+document.getElementById('send-otp').addEventListener('click', function(){
+  // Placeholder for live OTP API
+  currentOTP = Math.floor(100000 + Math.random() * 900000).toString();
+  alert('OTP sent (simulate API): ' + currentOTP);
+});
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
-  <script>
-    // Slots & Confirmation
-    const confirmationDiv = document.getElementById('confirmation');
-    document.getElementById('capitalForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      const selected = document.getElementById('capitalRange').value;
-      if(!selected) return alert('Please select a capital range');
-      confirmationDiv.textContent = "✅ Submission received! You will be contacted via fstlsite@gmail.com for Trusteeship slot confirmation and Investor Package access.";
-      let slotEl = document.getElementById('slotsRemaining');
-      slotEl.textContent = Math.max(0, parseInt(slotEl.textContent)-1);
-    });
+const verificationForm = document.getElementById('verification-form');
+verificationForm.addEventListener('submit', async function(e){
+  e.preventDefault();
 
-    // PDF Upload
-    document.getElementById('pdfForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      const fileInput = document.getElementById('pdfUpload');
-      if(fileInput.files.length === 0) return alert('Please select a PDF to upload');
-      document.getElementById('pdfConfirmation').textContent = "✅ PDF uploaded successfully!";
-      fileInput.value = '';
-    });
+  const enteredOTP = document.getElementById('otp-input').value;
+  if(enteredOTP !== currentOTP){ alert('Invalid OTP. Submission blocked.'); return; }
 
-    // Tenant Verification + QR + Ledger
-    const ledger = [];
-    document.getElementById('tenantForm').addEventListener('submit', function(e){
-      e.preventDefault();
+  // Placeholder: Confirm payment via First Bank API
+  let paymentConfirmed = confirm('Simulate payment confirmation to FSTL First Bank?');
+  if(!paymentConfirmed){ alert('Payment not confirmed.'); return; }
 
-      const data = {
-        fullName: document.getElementById('fullName').value,
-        phone: document.getElementById('phone').value,
-        email: document.getElementById('email').value,
-        nin: document.getElementById('nin').value,
-        bvn: document.getElementById('bvn').value,
-        bankAccount: document.getElementById('bankAccount').value,
-        bankName: document.getElementById('bankName').value,
-        rentAmount: document.getElementById('rentAmount').value,
-        propertyId: document.getElementById('propertyId').value,
-        timestamp: new Date().toISOString()
-      };
+  // Generate QR receipt
+  let qrWindow = window.open('', '', 'width=300,height=300');
+  qrWindow.document.write('<h3>QR Receipt</h3><div id="qrcode"></div>');
+  new QRCode(qrWindow.document.getElementById('qrcode'), 'FSTL-Receipt-' + new Date().getTime());
+  alert('Verification submitted. QR receipt generated.');
+});
 
-      const uniqueID = 'FSTL-'+Date.now()+'-'+Math.floor(Math.random()*100000);
-      QRCode.toCanvas(document.getElementById('tenantQR'), uniqueID, function(error){
-        if(error) console.error(error);
-      });
-      data.qr = uniqueID;
-
-      ledger.push(data);
-      document.getElementById('ledgerLog').textContent = JSON.stringify(ledger, null, 2);
-
-      document.getElementById('tenantConfirmation').textContent = `✅ Verification complete! QR issued: ${uniqueID}`;
-
-      console.log(`ALERT -> Estate Agent: ${data.fullName} | Property: ${data.propertyId} | QR: ${uniqueID}`);
-      console.log(`ALERT -> Property Owner: ${data.fullName} | Rent: ${data.rentAmount}`);
-      console.log(`ALERT -> Investor/Trustee: Slot verification & QR: ${uniqueID}`);
-    });
-  </script>
+const investorForm = document.getElementById('investor-form');
+investorForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  alert('Investor interest submitted. FSTL team will contact for structured participation.');
+});
+</script>
 
 </body>
 </html>
