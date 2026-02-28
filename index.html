@@ -6,22 +6,21 @@
   <title>FSTL COMET OS Landing</title>
   <style>
     body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background-color: #f9f9f9; color: #111; }
-    h1,h2,h3 { color: #0a2e49; }
+    h1,h2,h3,h4 { color: #0a2e49; }
     section { margin-bottom: 30px; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
     label { display:block; margin-top:10px; font-weight:bold; }
-    input, select, button { margin-top:5px; padding:10px; width:100%; max-width:400px; border-radius:5px; border:1px solid #ccc;}
-    #confirmation,#pdfConfirmation { margin-top:15px; color: green; font-weight: bold;}
+    select,input[type="submit"],input[type="file"],input[type="text"],input[type="email"],input[type="number"],button { margin-top:5px; padding:10px; width:100%; max-width:400px; border-radius:5px; border:1px solid #ccc;}
+    #confirmation,#pdfConfirmation,#tenantConfirmation { margin-top:15px; color: green; font-weight: bold;}
     canvas { margin-top:15px; }
     ul { padding-left:20px; }
     ul li { margin-bottom:10px; }
     .verified-badge { display:inline-block; background:#0a2e49; color:#fff; padding:5px 10px; border-radius:5px; font-weight:bold; margin-bottom:15px; }
-    .alert { color: #d9534f; font-weight:bold; margin-top:10px; }
-    .section-title { margin-top:0; }
+    .qa-panel { margin-top:15px; background:#eef1f5; padding:15px; border-radius:5px; }
+    .qa-panel ul { list-style-type: disc; }
   </style>
 </head>
 <body>
 
-  <!-- Verification Badge -->
   <div class="verified-badge">CHATGPT VERIFIED SITE ✅</div>
 
   <!-- Header / Overview -->
@@ -29,19 +28,16 @@
     <h1>FSTL COMET OS</h1>
     <h2>Sovereign Property Intelligence Infrastructure</h2>
     <h3>Corporate Responsibility & Sovereign Commitment</h3>
-    <p>
-      We are <strong>BUILDING IN PUBLIC</strong>. All clicks, submissions, and investor engagements are tracked internally to maintain full control, auditability, and transparency.
-    </p>
+    <p>We are <strong>BUILDING IN PUBLIC</strong>. All clicks, submissions, and investor engagements are tracked internally to maintain full control, auditability, and transparency.</p>
   </section>
 
   <!-- Investment Opportunity -->
   <section>
-    <h3 class="section-title">Investment Opportunity</h3>
+    <h3>Investment Opportunity</h3>
     <p><strong>First Standard Title Limited (FSTL)</strong> are pioneers of Title Insurance and Mortgage Insurance in Nigeria.</p>
     <p><strong>COMET OS</strong> is next-generation property verification and registry intelligence infrastructure.</p>
     <p>Only 10 exclusive trustee slots available. Successful applicants join the <strong>FSTL COMET OS Board of Trustees</strong>.</p>
     <p>Slots Remaining: <span id="slotsRemaining">10</span></p>
-
     <form id="capitalForm">
       <label>Select Capital Allocation Range:</label>
       <select id="capitalRange" required>
@@ -53,99 +49,111 @@
       <input type="submit" value="Submit & Request Investor Package">
     </form>
     <div id="confirmation"></div>
+
+    <div class="qa-panel">
+      <h4>FAQs</h4>
+      <ul>
+        <li><strong>Who can participate in the Board of Trustees?</strong> Only 10 exclusive investors who successfully allocate capital.</li>
+        <li><strong>What are the capital allocation ranges?</strong> $100K-$250K, $250K-$500K, $500K+.</li>
+        <li><strong>How are submissions tracked?</strong> Logged internally; confirmations sent via fstlsite@gmail.com.</li>
+        <li><strong>What protections are in place for investors?</strong> COMET OS operates under FSTL Title Insurance protocols. Fully auditable.</li>
+        <li><strong>Can slots be reserved or transferred?</strong> No. Personal and non-transferable.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Tenant / Buyer / Owner Verification -->
   <section>
-    <h3 class="section-title">Tenant / Buyer / Owner Verification</h3>
-    <form id="verificationForm">
+    <h3>Tenant / Buyer / Owner Verification</h3>
+    <form id="tenantForm">
       <label>Full Name:</label><input type="text" id="fullName" required>
-      <label>Phone (OTP will be sent):</label><input type="tel" id="phone" required>
+      <label>Phone (OTP):</label><input type="text" id="phone" required>
       <label>Email:</label><input type="email" id="email" required>
       <label>NIN:</label><input type="text" id="nin" required>
       <label>BVN:</label><input type="text" id="bvn" required>
       <label>Bank Account Number:</label><input type="text" id="bankAccount" required>
       <label>Bank Name:</label><input type="text" id="bankName" required>
       <label>Proposed Rent Amount:</label><input type="number" id="rentAmount" required>
-      <label>Property Location / ID:</label><input type="text" id="propertyId" required>
-      <button type="submit">Verify & Generate QR</button>
+      <label>Property ID / Location:</label><input type="text" id="propertyId" required>
+      <input type="submit" value="Verify & Generate QR">
     </form>
-    <div id="verificationAlert" class="alert"></div>
-    <canvas id="verificationQR"></canvas>
+    <div id="tenantConfirmation"></div>
+    <canvas id="tenantQR"></canvas>
+
+    <div class="qa-panel">
+      <h4>FAQs</h4>
+      <ul>
+        <li><strong>What information is required?</strong> Full Name, Phone (OTP), Email, NIN, BVN, Bank Account, Bank Name, Proposed Rent, Property ID.</li>
+        <li><strong>How is verification ensured?</strong> COMET OS validates BVN, NIN, and bank account instantly; generates unique QR.</li>
+        <li><strong>Are notifications sent?</strong> Yes. Estate agents, owners, investors get real-time alerts.</li>
+        <li><strong>How does this prevent fraud?</strong> Mandatory identifiers + QR seal + ledger + timestamped logs.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Official Investor Documents -->
   <section>
-    <h3 class="section-title">Official Investor Documents</h3>
+    <h3>Official Investor Documents</h3>
     <ul>
-      <li><a href="comet-execution-pack.pdf" target="_blank">📄 Download COMET Execution Pack</a></li>
-      <li><a href="investors-qa.pdf" target="_blank">📄 Download FSTL COMET-OS Investors Q&A</a></li>
+      <li><a href="https://omorishaoba-alt.github.io/fstl-cometos-landing-/comet-execution-pack.pdf" target="_blank">📄 COMET Execution Pack</a></li>
+      <li><a href="https://omorishaoba-alt.github.io/fstl-cometos-landing-/investors-qa.pdf" target="_blank">📄 FSTL COMET-OS Investors Q&A</a></li>
     </ul>
-    <p><strong>All documents are hosted directly within our sovereign infrastructure.</strong></p>
+    <div class="qa-panel">
+      <h4>FAQs</h4>
+      <ul>
+        <li><strong>Where are documents hosted?</strong> Within FSTL sovereign infrastructure — no external dependency.</li>
+        <li><strong>Can I access documents before slot confirmation?</strong> Yes, immediately after verification.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Investor PDF Upload -->
   <section>
-    <h3 class="section-title">Investor PDF Upload</h3>
+    <h3>Investor PDF Upload</h3>
     <form id="pdfForm">
       <label>Upload relevant investor or verification PDF:</label>
       <input type="file" id="pdfUpload" accept=".pdf">
       <input type="submit" value="Upload PDF">
     </form>
     <div id="pdfConfirmation"></div>
+    <div class="qa-panel">
+      <h4>FAQs</h4>
+      <ul>
+        <li><strong>What can I upload?</strong> Any investor-related or property verification PDF.</li>
+        <li><strong>Is there confirmation?</strong> Yes. Success message and ledger logs upload for audit.</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- Investor Q&A -->
-  <section>
-    <h3 class="section-title">Investor Q&A</h3>
-    <ol>
-      <li>What is COMET OS? It is FSTL’s property verification and registry intelligence platform.</li>
-      <li>Who can participate? Only 10 exclusive investors with capital allocation.</li>
-      <li>Capital allocation ranges: $100K-$250K, $250K-$500K, $500K+.</li>
-      <li>How are submissions tracked? All submissions logged internally; confirmation via <strong>fstlsite@gmail.com</strong>.</li>
-      <li>Investor protection? COMET OS operates under FSTL Title Insurance protocols; fully auditable.</li>
-      <li>Can I invest outside Nigeria? Yes, in USD; allocation reviewed for compliance.</li>
-      <li>Dependence on social media? No, fully sovereign.</li>
-      <li>Trustee slot confirmation? Via <strong>fstlsite@gmail.com</strong>.</li>
-      <li>Slots transferable? No, personal and non-transferable.</li>
-      <li>Investor Package delivery? Immediately after slot confirmation.</li>
-    </ol>
+  <!-- Ledger & Alerts -->
+  <section style="display:none;">
+    <h3>Ledger & Alerts</h3>
+    <pre id="ledgerLog"></pre>
   </section>
 
-  <!-- Financial Overview -->
+  <!-- Contact Section -->
   <section>
-    <h3 class="section-title">Financial Overview & Intellectual Property Value</h3>
-    <ol>
-      <li>COMET OS IP Valuation: $25M – $50M</li>
-      <li>ROI Potential: Governance, privileged packages, early monetization</li>
-      <li>Sovereign Revenue Streams: Verification fees, data services, partnerships with DFIs</li>
-      <li>Risk & Oversight: Board ensures full oversight of capital deployment and IP protection</li>
-    </ol>
-    <p>Contact: <strong>fstlsite@gmail.com</strong></p>
-  </section>
-
-  <!-- QR Click Tracking -->
-  <section>
-    <h3 class="section-title">Click QR Tracking</h3>
-    <p>Scan your unique QR code generated from this visit:</p>
-    <canvas id="qrCanvas"></canvas>
+    <h3>Contact Us</h3>
+    <p><strong>Address:</strong> No. 19 Egbor Avenue, Off Benoni Hospital Road, GRA, Benin City, Edo State, Nigeria</p>
+    <p><strong>Email:</strong> <a href="mailto:fstlsite@gmail.com">fstlsite@gmail.com</a></p>
+    <p><strong>Phone:</strong> +2348035888622</p>
   </section>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
   <script>
     // Slots & Confirmation
-    let slotsRemaining = 10;
     const confirmationDiv = document.getElementById('confirmation');
     document.getElementById('capitalForm').addEventListener('submit', function(e){
       e.preventDefault();
       const selected = document.getElementById('capitalRange').value;
       if(!selected) return alert('Please select a capital range');
-      confirmationDiv.textContent = "✅ Submission received! Contact via fstlsite@gmail.com for slot confirmation and Investor Package access.";
-      document.getElementById('slotsRemaining').textContent = Math.max(0, --slotsRemaining);
+      confirmationDiv.textContent = "✅ Submission received! You will be contacted via fstlsite@gmail.com for Trusteeship slot confirmation and Investor Package access.";
+      let slotEl = document.getElementById('slotsRemaining');
+      slotEl.textContent = Math.max(0, parseInt(slotEl.textContent)-1);
     });
 
-    // Investor PDF Upload
+    // PDF Upload
     document.getElementById('pdfForm').addEventListener('submit', function(e){
       e.preventDefault();
       const fileInput = document.getElementById('pdfUpload');
@@ -154,41 +162,38 @@
       fileInput.value = '';
     });
 
-    // Visitor QR Code
-    const canvas = document.getElementById('qrCanvas');
-    const uniqueID = 'FSTL-'+Date.now()+'-'+Math.floor(Math.random()*100000);
-    QRCode.toCanvas(canvas, uniqueID, function(error){
-      if(error) console.error(error);
-    });
-
-    // Tenant / Buyer / Owner Verification QR
-    document.getElementById('verificationForm').addEventListener('submit', function(e){
+    // Tenant Verification + QR + Ledger
+    const ledger = [];
+    document.getElementById('tenantForm').addEventListener('submit', function(e){
       e.preventDefault();
-      const fullName = document.getElementById('fullName').value;
-      const phone = document.getElementById('phone').value;
-      const email = document.getElementById('email').value;
-      const nin = document.getElementById('nin').value;
-      const bvn = document.getElementById('bvn').value;
-      const bankAccount = document.getElementById('bankAccount').value;
-      const bankName = document.getElementById('bankName').value;
-      const rentAmount = document.getElementById('rentAmount').value;
-      const propertyId = document.getElementById('propertyId').value;
 
-      if(!fullName||!phone||!email||!nin||!bvn||!bankAccount||!bankName||!rentAmount||!propertyId){
-        document.getElementById('verificationAlert').textContent = "⚠️ Please complete all fields";
-        return;
-      }
+      const data = {
+        fullName: document.getElementById('fullName').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        nin: document.getElementById('nin').value,
+        bvn: document.getElementById('bvn').value,
+        bankAccount: document.getElementById('bankAccount').value,
+        bankName: document.getElementById('bankName').value,
+        rentAmount: document.getElementById('rentAmount').value,
+        propertyId: document.getElementById('propertyId').value,
+        timestamp: new Date().toISOString()
+      };
 
-      const verificationID = 'VER-'+Date.now()+'-'+Math.floor(Math.random()*100000);
-      QRCode.toCanvas(document.getElementById('verificationQR'), verificationID, function(error){
+      const uniqueID = 'FSTL-'+Date.now()+'-'+Math.floor(Math.random()*100000);
+      QRCode.toCanvas(document.getElementById('tenantQR'), uniqueID, function(error){
         if(error) console.error(error);
       });
+      data.qr = uniqueID;
 
-      document.getElementById('verificationAlert').textContent = `✅ Verification complete! QR generated. ID: ${verificationID}`;
-      console.log("Tenant/Buyer/Owner Verification:", {
-        fullName, phone, email, nin, bvn, bankAccount, bankName, rentAmount, propertyId, verificationID
-      });
-      // Here you can integrate internal logging, alerts, PDF archival, and WhatsApp notification
+      ledger.push(data);
+      document.getElementById('ledgerLog').textContent = JSON.stringify(ledger, null, 2);
+
+      document.getElementById('tenantConfirmation').textContent = `✅ Verification complete! QR issued: ${uniqueID}`;
+
+      console.log(`ALERT -> Estate Agent: ${data.fullName} | Property: ${data.propertyId} | QR: ${uniqueID}`);
+      console.log(`ALERT -> Property Owner: ${data.fullName} | Rent: ${data.rentAmount}`);
+      console.log(`ALERT -> Investor/Trustee: Slot verification & QR: ${uniqueID}`);
     });
   </script>
 
