@@ -5,38 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FSTL COMET OS — Property Verification & Investment</title>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 <style>
 body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
-
-/* Hero gradient */
-.hero-gradient {
-  background: linear-gradient(90deg, #1e40af, #3b82f6);
-}
-
-/* Card shadows */
-.section-card {
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  border-radius: 0.75rem;
-  background: white;
-}
-
-/* Buttons */
+.section-card { box-shadow: 0 8px 20px rgba(0,0,0,0.1); border-radius: 0.75rem; background:white; }
 .btn-primary { background-color: #1e40af; }
 .btn-primary:hover { background-color: #2563eb; }
 .btn-success { background-color: #16a34a; }
 .btn-success:hover { background-color: #22c55e; }
-
-/* FAQ accordion */
 .accordion-header { cursor: pointer; }
-.accordion-content { display: none; padding-top: 0.5rem; }
-.accordion-content.show { display: block; }
+.accordion-content { display: none; padding-top:0.5rem; }
+.accordion-content.show { display:block; }
 </style>
 </head>
-<body>
+<body x-data="fstlLanding()">
 
 <!-- HERO -->
-<section class="hero-gradient text-white p-12 text-center">
+<section class="bg-gradient-to-r from-blue-800 to-blue-500 text-white p-12 text-center">
   <h1 class="text-5xl font-bold mb-4">FSTL COMET OS</h1>
   <p class="text-xl mb-6">Nigeria Pilot | QR-Secured Receipts | Bank-Confirmed Payments</p>
   <div class="flex flex-col md:flex-row justify-center gap-4">
@@ -50,92 +36,103 @@ body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
 <!-- VERIFICATION FORM -->
 <section id="verification" class="section-card p-6">
   <h2 class="text-3xl font-bold text-blue-900 mb-4">Tenant / Buyer / Owner Verification</h2>
-  <p class="mb-4 text-gray-700">All verifications are QR-secured and bank-confirmed.</p>
-  <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <input type="text" placeholder="Full Name*" required class="border p-3 rounded w-full">
-    <input type="tel" placeholder="Phone (OTP)*" required class="border p-3 rounded w-full">
-    <button type="button" class="btn-primary text-white rounded p-3 w-full md:w-auto font-semibold" onclick="sendOTP()">Send OTP</button>
-    <input type="text" placeholder="Enter OTP*" required class="border p-3 rounded w-full">
-    <input type="email" placeholder="Email*" required class="border p-3 rounded w-full">
-    <input type="text" placeholder="NIN*" required class="border p-3 rounded w-full">
-    <input type="text" placeholder="BVN*" required class="border p-3 rounded w-full">
-    <input type="text" placeholder="Bank Account Number*" required class="border p-3 rounded w-full">
-    <input type="text" placeholder="Bank Name*" required class="border p-3 rounded w-full">
-    <input type="number" placeholder="Proposed Rent Amount*" required class="border p-3 rounded w-full">
-    <input type="text" placeholder="Property Location / COMET OS ID*" required class="border p-3 rounded w-full">
+  <form @submit.prevent="submitVerification" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <input type="text" placeholder="Full Name*" x-model="verification.fullName" required class="border p-3 rounded w-full">
+    <input type="tel" placeholder="Phone (OTP)*" x-model="verification.phone" required class="border p-3 rounded w-full">
+    <button type="button" class="btn-primary text-white rounded p-3 w-full md:w-auto font-semibold" @click="sendOTP">Send OTP</button>
+    <input type="text" placeholder="Enter OTP*" x-model="verification.otp" required class="border p-3 rounded w-full">
+    <input type="email" placeholder="Email*" x-model="verification.email" required class="border p-3 rounded w-full">
+    <input type="text" placeholder="NIN*" x-model="verification.nin" required class="border p-3 rounded w-full">
+    <input type="text" placeholder="BVN*" x-model="verification.bvn" required class="border p-3 rounded w-full">
+    <input type="text" placeholder="Bank Account Number*" x-model="verification.bankAccount" required class="border p-3 rounded w-full">
+    <input type="text" placeholder="Bank Name*" x-model="verification.bankName" required class="border p-3 rounded w-full">
+    <input type="number" placeholder="Proposed Rent Amount*" x-model="verification.rent" required class="border p-3 rounded w-full">
+    <input type="text" placeholder="Property Location / COMET OS ID*" x-model="verification.propertyId" required class="border p-3 rounded w-full">
     <button type="submit" class="btn-success text-white rounded p-3 font-semibold col-span-full w-full hover:bg-green-700">Submit Verification</button>
   </form>
+
+  <!-- QR Receipt Display -->
+  <div x-show="qrGenerated" class="mt-6 p-4 border rounded text-center">
+    <h3 class="font-semibold mb-2">QR Receipt</h3>
+    <canvas id="qrCanvas" class="mx-auto"></canvas>
+    <p class="mt-2 text-sm text-gray-700">Save this QR as your confirmation receipt</p>
+  </div>
 </section>
 
 <!-- INVESTOR FORM -->
 <section id="investor" class="section-card p-6">
   <h2 class="text-3xl font-bold text-blue-900 mb-4">Invest & Join COMET OS Trustees</h2>
-  <p class="mb-4 text-gray-700">Structured capitalization for enterprise deployment. Limited slots available.</p>
-  <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <input type="text" placeholder="Full Name*" required class="border p-3 rounded w-full">
-    <input type="email" placeholder="Email*" required class="border p-3 rounded w-full">
-    <input type="tel" placeholder="Phone*" required class="border p-3 rounded w-full">
-    <select required class="border p-3 rounded w-full">
+  <form @submit.prevent="submitInvestor" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <input type="text" placeholder="Full Name*" x-model="investor.fullName" required class="border p-3 rounded w-full">
+    <input type="email" placeholder="Email*" x-model="investor.email" required class="border p-3 rounded w-full">
+    <input type="tel" placeholder="Phone*" x-model="investor.phone" required class="border p-3 rounded w-full">
+    <select x-model="investor.range" required class="border p-3 rounded w-full">
       <option value="">Select Investment Range*</option>
       <option value="100-250k">$100K-$250K</option>
       <option value="250-500k">$250K-$500K</option>
       <option value="500k+">$500K+</option>
     </select>
-    <textarea placeholder="Message" class="border p-3 rounded col-span-full w-full"></textarea>
+    <textarea placeholder="Message" x-model="investor.message" class="border p-3 rounded col-span-full w-full"></textarea>
     <button type="submit" class="btn-primary text-white rounded p-3 font-semibold col-span-full w-full hover:bg-blue-700">Submit Interest</button>
   </form>
 </section>
 
-<!-- BANKING INFO -->
+<!-- BANKING & CONTACT -->
 <section class="section-card p-6">
-  <h2 class="text-3xl font-bold text-blue-900 mb-2">Banking & Receipts</h2>
-  <p class="mb-1">All payments go directly to <strong>FSTL First Bank Account: 2025222557</strong></p>
-  <p>Receipts issued after bank confirmation are QR-secured for audit and verification.</p>
-</section>
-
-<!-- CONTACT -->
-<section class="section-card p-6">
-  <h2 class="text-3xl font-bold text-blue-900 mb-2">Contact & Transparency</h2>
-  <p class="mb-1">Address: No. 19 Egbor Avenue, Off Benoni Hospital Road, GRA, Benin City, Edo State, Nigeria</p>
-  <p class="mb-1">Email: fstlsite@gmail.com</p>
+  <h2 class="text-3xl font-bold text-blue-900 mb-2">Banking & Contact</h2>
+  <p class="mb-1">All payments must go to <strong>FSTL First Bank: 2025222557</strong></p>
+  <p>QR-secured receipt issued after bank confirmation.</p>
+  <p class="mt-2">Address: No. 19 Egbor Avenue, Off Benoni Hospital Road, GRA, Benin City, Edo State, Nigeria</p>
+  <p>Email: fstlsite@gmail.com</p>
   <p>Phone: +2348035888622</p>
 </section>
 
 <!-- FAQ -->
 <section class="section-card p-6">
   <h2 class="text-3xl font-bold text-blue-900 mb-4">Frequently Asked Questions</h2>
-  <div>
-    <div class="accordion-item mb-2">
-      <div class="accordion-header font-semibold text-gray-800 p-3 bg-gray-100 rounded" onclick="toggleAccordion(this)">Do you hold client funds?</div>
-      <div class="accordion-content p-3 text-gray-700">No — all payments go directly to FSTL First Bank.</div>
+  <template x-for="item in faqs" :key="item.q">
+    <div class="mb-2">
+      <div class="accordion-header font-semibold text-gray-800 p-3 bg-gray-100 rounded" @click="toggleFAQ(item)"><span x-text="item.q"></span></div>
+      <div class="accordion-content p-3 text-gray-700" x-show="item.open" x-transition><span x-text="item.a"></span></div>
     </div>
-    <div class="accordion-item mb-2">
-      <div class="accordion-header font-semibold text-gray-800 p-3 bg-gray-100 rounded" onclick="toggleAccordion(this)">When is receipt issued?</div>
-      <div class="accordion-content p-3 text-gray-700">After bank confirmation only, QR-secured.</div>
-    </div>
-    <div class="accordion-item mb-2">
-      <div class="accordion-header font-semibold text-gray-800 p-3 bg-gray-100 rounded" onclick="toggleAccordion(this)">Are receipts forge-proof?</div>
-      <div class="accordion-content p-3 text-gray-700">Yes, QR-secured & database-linked.</div>
-    </div>
-    <div class="accordion-item mb-2">
-      <div class="accordion-header font-semibold text-gray-800 p-3 bg-gray-100 rounded" onclick="toggleAccordion(this)">Can agents collect payments?</div>
-      <div class="accordion-content p-3 text-gray-700">No.</div>
-    </div>
-    <div class="accordion-item mb-2">
-      <div class="accordion-header font-semibold text-gray-800 p-3 bg-gray-100 rounded" onclick="toggleAccordion(this)">Verification time?</div>
-      <div class="accordion-content p-3 text-gray-700">24-48 hours depending on location.</div>
-    </div>
-  </div>
+  </template>
 </section>
 
 </main>
 
 <script>
-function sendOTP() { alert("OTP sent to phone — demo only"); }
-function toggleAccordion(header) {
-  const content = header.nextElementSibling;
-  content.classList.toggle("show");
+function fstlLanding() {
+  return {
+    verification: { fullName:'', phone:'', otp:'', email:'', nin:'', bvn:'', bankAccount:'', bankName:'', rent:'', propertyId:'' },
+    investor: { fullName:'', email:'', phone:'', range:'', message:'' },
+    qrGenerated: false,
+    faqs: [
+      { q:"Do you hold client funds?", a:"No — all payments go directly to FSTL First Bank.", open:false },
+      { q:"When is receipt issued?", a:"After bank confirmation only, QR-secured.", open:false },
+      { q:"Are receipts forge-proof?", a:"Yes, QR-secured & database-linked.", open:false },
+      { q:"Can agents collect payments?", a:"No.", open:false },
+      { q:"Verification time?", a:"24-48 hours depending on location.", open:false },
+    ],
+    sendOTP() { alert("OTP sent to phone — demo only"); },
+    toggleFAQ(item) { item.open = !item.open; },
+    submitVerification() {
+      // simulate storing to backend
+      console.log("Verification submitted:", this.verification);
+      // Generate QR receipt (simulated)
+      const qrData = JSON.stringify(this.verification);
+      QRCode.toCanvas(document.getElementById('qrCanvas'), qrData, function (error) {
+        if(error) console.error(error);
+      });
+      this.qrGenerated = true;
+      alert("Verification submitted! QR receipt generated (demo).");
+    },
+    submitInvestor() {
+      console.log("Investor submitted:", this.investor);
+      alert("Investor interest submitted! FSTL will follow up.");
+    }
+  }
 }
 </script>
+
 </body>
 </html>
