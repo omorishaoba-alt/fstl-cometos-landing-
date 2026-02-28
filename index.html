@@ -3,41 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FSTL COMET OS | Sovereign Property Verification Infrastructure</title>
+<title>FSTL COMET OS | Sovereign Property Verification</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Inter',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6;}
-nav{background:#0f172a;padding:20px;}
-nav a{color:#fff;margin-right:20px;text-decoration:none;font-weight:500;}
+nav{background:#0f172a;padding:20px;display:flex;justify-content:center;flex-wrap:wrap;}
+nav a{color:#fff;margin:5px 15px;text-decoration:none;font-weight:500;transition:0.3s;}
+nav a:hover{color:#2563eb;}
 .hero{background:#0f172a;color:#fff;text-align:center;padding:100px 20px;}
 .hero h1{font-size:42px;margin-bottom:15px;}
 .hero p{color:#cbd5e1;margin-bottom:25px;}
-.btn{display:inline-block;background:#2563eb;color:#fff;padding:14px 28px;border-radius:6px;text-decoration:none;font-weight:600;}
+.btn{display:inline-block;background:#2563eb;color:#fff;padding:14px 28px;border-radius:6px;text-decoration:none;font-weight:600;transition:0.3s;}
+.btn:hover{background:#1d4ed8;}
 .container{max-width:1100px;margin:auto;padding:70px 20px;}
 .section{border-bottom:1px solid #e2e8f0;}
-h2{font-size:28px;margin-bottom:20px;}
-.card{background:#fff;padding:30px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05);margin-bottom:25px;}
-.footer{background:#0f172a;color:#cbd5e1;text-align:center;padding:40px 20px;font-size:14px;}
+h2{font-size:28px;margin-bottom:20px;color:#0f172a;}
+.card{background:#fff;padding:30px;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:25px;}
+input, select, textarea, button{font-family:'Inter',sans-serif;}
+input, select, textarea{width:100%;padding:12px 15px;margin-bottom:12px;border:1px solid #cbd5e1;border-radius:6px;outline:none;transition:0.3s;}
+input:focus, select:focus, textarea:focus{border-color:#2563eb;box-shadow:0 0 0 2px rgba(37,99,235,0.2);}
+button{cursor:pointer;border:none;}
+.footer{background:#0f172a;color:#cbd5e1;text-align:center;padding:40px 20px;font-size:14px;margin-top:40px;}
+@media (max-width:768px){.hero h1{font-size:32px;}}
 </style>
 </head>
 
 <body>
 
 <nav>
-<a href="index.html">Home</a>
+<a href="#hero">Home</a>
 <a href="#verification">Verification</a>
 <a href="#capital">Capitalization</a>
-<a href="terms.html">Terms</a>
-<a href="privacy.html">Privacy</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<div class="hero">
+<div class="hero" id="hero">
 <h1>FSTL COMET OS</h1>
 <p>Sovereign-Grade Property Verification Infrastructure</p>
 <a href="#verification" class="btn">Start Verification</a>
 </div>
 
+<!-- Executive Overview -->
 <div class="container section">
 <h2>Executive Overview</h2>
 <div class="card">
@@ -47,6 +55,7 @@ and establish auditable transaction records.
 </div>
 </div>
 
+<!-- Infrastructure Framework -->
 <div class="container section">
 <h2>Infrastructure Framework</h2>
 <div class="card">
@@ -58,6 +67,7 @@ and establish auditable transaction records.
 </div>
 </div>
 
+<!-- Structured Capitalization -->
 <div class="container section" id="capital">
 <h2>Structured Capitalization</h2>
 <div class="card">
@@ -69,11 +79,59 @@ $500K+
 </div>
 </div>
 
+<!-- Verification Form -->
 <div class="container section" id="verification">
-<h2>Verification Portal</h2>
+<h2>Tenant / Buyer / Owner Verification</h2>
 <div class="card">
-Verification requires identity submission and confirmed bank settlement.
-Payments must go directly to FSTL First Bank Account: <strong>2025222557</strong>.
+<form id="verificationForm">
+<input type="text" placeholder="Full Name*" required>
+<input type="tel" placeholder="Phone (OTP)*" required>
+<button type="button" onclick="sendOTP()" class="btn">Send OTP</button>
+<input type="text" placeholder="Enter OTP*" required>
+<input type="email" placeholder="Email*" required>
+<input type="text" placeholder="NIN*" required>
+<input type="text" placeholder="BVN*" required>
+<input type="text" placeholder="Bank Account Number*" required>
+<input type="text" placeholder="Bank Name*" required>
+<input type="number" placeholder="Proposed Rent Amount*" required>
+<input type="text" placeholder="Property Location / COMET OS ID*" required>
+<button type="submit" class="btn">Submit Verification</button>
+</form>
+</div>
+</div>
+
+<!-- Banking Section -->
+<div class="container section">
+<h2>Banking & Receipts</h2>
+<div class="card">
+<p>All payments must go directly to <strong>FSTL First Bank Account: 2025222557</strong>.</p>
+<p>Receipts are issued only after bank confirmation and are QR-secured for audit.</p>
+</div>
+</div>
+
+<!-- FAQ Section -->
+<div class="container section" id="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="card">
+<p><strong>Q:</strong> Do you hold client funds?<br><strong>A:</strong> No — all payments go directly to FSTL First Bank.</p>
+<p><strong>Q:</strong> When is receipt issued?<br><strong>A:</strong> After bank confirmation only, QR-secured.</p>
+<p><strong>Q:</strong> Are receipts forge-proof?<br><strong>A:</strong> Yes, QR-secured & database-linked.</p>
+<p><strong>Q:</strong> Can agents collect payments?<br><strong>A:</strong> No.</p>
+<p><strong>Q:</strong> How long does verification take?<br><strong>A:</strong> 24-48 hours depending on location.</p>
+<p><strong>Q:</strong> Is this survival funding?<br><strong>A:</strong> No, structured enterprise capitalization.</p>
+<p><strong>Q:</strong> Trustee participation?<br><strong>A:</strong> Limited to 10 slots, private & structured.</p>
+<p><strong>Q:</strong> Nigeria = pilot. Global posture?<br><strong>A:</strong> Nigeria is stress-test; enterprise is globally designed.</p>
+<p><strong>Q:</strong> COMET OS = enterprise?<br><strong>A:</strong> No, it is a distribution layer only.</p>
+</div>
+</div>
+
+<!-- Contact Section -->
+<div class="container section" id="contact">
+<h2>Contact & Transparency</h2>
+<div class="card">
+<p>Address: No. 19 Egbor Avenue, Off Benoni Hospital Road, GRA, Benin City, Edo State, Nigeria</p>
+<p>Email: fstlsite@gmail.com</p>
+<p>Phone: +2348035888622</p>
 </div>
 </div>
 
@@ -81,6 +139,17 @@ Payments must go directly to FSTL First Bank Account: <strong>2025222557</strong
 © 2026 FSTL. All Rights Reserved.<br>
 COMET OS is a verification infrastructure operated under FSTL governance.
 </div>
+
+<script>
+function sendOTP(){
+  alert("OTP sent — demo only");
+}
+
+document.getElementById('verificationForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  alert("Verification submitted — demo only. Payment must go to FSTL First Bank Account 2025222557.");
+});
+</script>
 
 </body>
 </html>
