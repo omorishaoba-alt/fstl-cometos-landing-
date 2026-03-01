@@ -26,6 +26,8 @@ section form .btn-submit{background:#16a34a;color:#fff;border:none;}
 section form .btn-submit:hover{background:#15803d;}
 section form .btn-otp{background:#2563eb;color:#fff;border:none;}
 section form .btn-otp:hover{background:#1d4ed8;}
+.qr-receipt{display:none;margin-top:10px;padding:10px;border:1px solid #16a34a;border-radius:6px;background:#dcfce7;color:#166534;}
+.trustee-status{margin-top:10px;font-weight:600;color:#2563eb;}
 @media(max-width:768px){.hero h1{font-size:32px;}}
 </style>
 </head>
@@ -54,7 +56,6 @@ section form .btn-otp:hover{background:#1d4ed8;}
 <h2>Executive Overview</h2>
 <div class="card">
 <p>FSTL operates in the <strong>Property Technology (PropTech)</strong> sector, focused on transforming land and landed property into structured, investable capital. COMET OS Phase I provides a scalable infrastructure to verify ownership, reduce fraud, and issue QR-secured receipts directly linked to FSTL First Bank transactions. Phase II will integrate Title Insurance, unlocking true capital access for verified assets.</p>
-<p><strong>Key Offerings:</strong></p>
 <ul>
 <li>Verification of land & landed property (residential, commercial, industrial)</li>
 <li>Bank-confirmed payments with QR-secured receipts</li>
@@ -86,13 +87,14 @@ section form .btn-otp:hover{background:#1d4ed8;}
 <div class="card">
 <p>FSTL is raising structured capital to deploy COMET OS nationally and operationalize dead asset transformation.</p>
 <p><strong>Limited Trustee Slots:</strong> 10</p>
+<p class="trustee-status" id="trusteeStatus">Available Slots: 10</p>
 <p><strong>Capital Ranges:</strong><br>
 $100K – $250K<br>
 $250K – $500K<br>
 $500K+</p>
 
 <h3>Investor / Trustee Interest Form</h3>
-<form>
+<form id="investorForm">
 <input type="text" placeholder="Full Name*" required>
 <input type="email" placeholder="Email*" required>
 <input type="tel" placeholder="Phone*" required>
@@ -105,6 +107,7 @@ $500K+</p>
 <textarea placeholder="Message"></textarea>
 <button type="submit" class="btn-submit">Submit Interest</button>
 </form>
+<div id="investorMessage"></div>
 </div>
 </div>
 
@@ -114,11 +117,11 @@ $500K+</p>
 <div class="card">
 <p>COMET OS Phase I verification requires identity & bank-confirmed payment.</p>
 <p>All payments must go directly to <strong>FSTL First Bank Account: 2025222557</strong>. Receipts are issued only after bank confirmation and are QR-secured.</p>
-<form>
+<form id="verificationForm">
 <input type="text" placeholder="Full Name*" required>
-<input type="tel" placeholder="Phone (OTP)*" required>
+<input type="tel" placeholder="Phone (OTP)*" required id="otpPhone">
 <button type="button" class="btn-otp" onclick="sendOTP()">Send OTP</button>
-<input type="text" placeholder="Enter OTP*" required>
+<input type="text" placeholder="Enter OTP*" required id="otpInput">
 <input type="email" placeholder="Email*" required>
 <input type="text" placeholder="NIN*" required>
 <input type="text" placeholder="BVN*" required>
@@ -128,6 +131,7 @@ $500K+</p>
 <input type="text" placeholder="Property Location / COMET OS ID*" required>
 <button type="submit" class="btn-submit">Submit Verification</button>
 </form>
+<div class="qr-receipt" id="qrReceipt">QR Receipt Generated! Payment Confirmed. Save this receipt.</div>
 </div>
 </div>
 
@@ -149,7 +153,7 @@ $500K+</p>
 <p><strong>Q:</strong> How does COMET OS work?<br><strong>A:</strong> Identity verification, document validation, bank-confirmed payments, QR-secured receipts, and digital audit trails.</p>
 <p><strong>Q:</strong> Are payments safe?<br><strong>A:</strong> Yes — all payments go to FSTL First Bank and are confirmed via QR receipts.</p>
 <p><strong>Q:</strong> What are trustee slots?<br><strong>A:</strong> Limited participation opportunities for investors who fund FSTL’s infrastructure, giving oversight and early access to structured assets.</p>
-<p><strong>Q:</strong> Does FSTL issue title insurance now?<br><strong>A:</strong> Phase I is verification only. Title Insurance will be integrated in Phase II.</p>
+<p><strong>Q:</strong> Does FSTL issue title insurance now?<br><strong>A:</strong> Phase I is verification only. Phase II will provide full title insurance.</p>
 <p><strong>Q:</strong> How long does verification take?<br><strong>A:</strong> 24–48 hours depending on property type and location.</p>
 <p><strong>Q:</strong> Why invest?<br><strong>A:</strong> Verified assets become investor-ready, reducing risk and creating opportunities for structured capital participation.</p>
 <p><strong>Q:</strong> What is the Nigeria pilot?<br><strong>A:</strong> It is the real-world test case proving COMET OS functionality before scaling globally.</p>
@@ -162,9 +166,39 @@ COMET OS is a sovereign-grade land verification infrastructure under FSTL govern
 </div>
 
 <script>
-function sendOTP() {
-alert("OTP sent to phone — demo only");
+let trusteeSlots = 10;
+
+// Investor form submission
+document.getElementById('investorForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    if(trusteeSlots > 0){
+        trusteeSlots--;
+        document.getElementById('trusteeStatus').innerText = "Available Slots: " + trusteeSlots;
+        document.getElementById('investorMessage').innerText = "Thank you! Your interest has been submitted.";
+        this.reset();
+    } else {
+        document.getElementById('investorMessage').innerText = "All trustee slots are filled.";
+    }
+});
+
+// OTP simulation
+let generatedOTP = null;
+function sendOTP(){
+    generatedOTP = Math.floor(100000 + Math.random() * 900000);
+    alert("OTP sent to phone: " + generatedOTP + " (demo only)");
 }
+
+// Verification submission
+document.getElementById('verificationForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const otpInput = document.getElementById('otpInput').value;
+    if(parseInt(otpInput) === generatedOTP){
+        document.getElementById('qrReceipt').style.display = "block";
+        this.reset();
+    } else {
+        alert("Incorrect OTP. Please try again.");
+    }
+});
 </script>
 
 </body>
