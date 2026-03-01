@@ -3,189 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FSTL COMET OS | Sovereign Property Verification Infrastructure</title>
-
+<title>FSTL COMET OS | Transform Dead Assets into Capital</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Inter',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6;}
-
-nav{
-background:#0f172a;
-padding:20px;
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-}
-nav a{
-color:#fff;
-margin:5px 15px;
-text-decoration:none;
-font-weight:500;
-transition:0.3s;
-}
-nav a:hover{color:#2563eb;}
-
-.hero{
-background:#0f172a;
-color:#fff;
-text-align:center;
-padding:100px 20px;
-}
+nav{background:#0f172a;padding:20px;display:flex;justify-content:center;flex-wrap:wrap;}
+nav a{color:#fff;margin:5px 15px;text-decoration:none;font-weight:500;}
+.hero{background:#0f172a;color:#fff;text-align:center;padding:100px 20px;}
 .hero h1{font-size:42px;margin-bottom:15px;}
 .hero p{color:#cbd5e1;margin-bottom:25px;}
-
-.btn{
-display:inline-block;
-background:#2563eb;
-color:#fff;
-padding:14px 28px;
-border-radius:6px;
-text-decoration:none;
-font-weight:600;
-transition:0.3s;
-border:none;
-cursor:pointer;
-}
-.btn:hover{background:#1d4ed8;}
-
-.container{
-max-width:1100px;
-margin:auto;
-padding:70px 20px;
-}
-
-.section{border-bottom:1px solid #e2e8f0;}
-
-h2{font-size:28px;margin-bottom:20px;color:#0f172a;}
-
-.card{
-background:#fff;
-padding:30px;
-border-radius:8px;
-box-shadow:0 2px 12px rgba(0,0,0,0.08);
-margin-bottom:25px;
-}
-
-input, select, textarea{
-width:100%;
-padding:12px 15px;
-margin-bottom:12px;
-border:1px solid #cbd5e1;
-border-radius:6px;
-outline:none;
-transition:0.3s;
-}
-
-input:focus, select:focus, textarea:focus{
-border-color:#2563eb;
-box-shadow:0 0 0 2px rgba(37,99,235,0.2);
-}
-
-.footer{
-background:#0f172a;
-color:#cbd5e1;
-text-align:center;
-padding:40px 20px;
-font-size:14px;
-margin-top:40px;
-}
-
-@media(max-width:768px){
-.hero h1{font-size:32px;}
-}
+.btn{display:inline-block;background:#2563eb;color:#fff;padding:14px 28px;border-radius:6px;text-decoration:none;font-weight:600;margin:5px;}
+.container{max-width:1100px;margin:auto;padding:70px 20px;}
+.section{border-bottom:1px solid #e2e8f0;margin-bottom:50px;}
+h2{font-size:28px;margin-bottom:20px;}
+.card{background:#fff;padding:30px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05);margin-bottom:25px;}
+.footer{background:#0f172a;color:#cbd5e1;text-align:center;padding:40px 20px;font-size:14px;}
+input, select, textarea, button{width:100%;padding:12px 15px;margin-bottom:10px;border-radius:6px;border:1px solid #cbd5e1;}
+button{cursor:pointer;font-weight:600;}
+button:hover{opacity:0.9;}
+section form .btn-submit{background:#16a34a;color:#fff;border:none;}
+section form .btn-submit:hover{background:#15803d;}
+section form .btn-otp{background:#2563eb;color:#fff;border:none;}
+section form .btn-otp:hover{background:#1d4ed8;}
+@media(max-width:768px){.hero h1{font-size:32px;}}
 </style>
 </head>
-
 <body>
 
+<!-- NAVIGATION -->
 <nav>
-<a href="#hero">Home</a>
+<a href="#home">Home</a>
+<a href="#overview">Overview</a>
 <a href="#verification">Verification</a>
-<a href="#trustee">Trustee</a>
-<a href="#faq">FAQ</a>
+<a href="#capital">Capitalization</a>
 <a href="#contact">Contact</a>
+<a href="#faq">FAQ</a>
 </nav>
 
-<div class="hero" id="hero">
+<!-- HERO -->
+<div class="hero" id="home">
 <h1>FSTL COMET OS</h1>
-<p>Sovereign-Grade Property Verification Infrastructure</p>
+<p>Transforming Dead Assets into Capital | Sovereign-Grade Property Verification Infrastructure</p>
 <a href="#verification" class="btn">Start Verification</a>
+<a href="#capital" class="btn">Investor Brief</a>
 </div>
 
-<!-- Executive Overview -->
-<div class="container section">
+<!-- EXECUTIVE OVERVIEW -->
+<div class="container section" id="overview">
 <h2>Executive Overview</h2>
 <div class="card">
-COMET OS is a structured property verification and transaction validation system
-designed to eliminate fraud, enforce bank-confirmed settlements,
-and establish auditable transaction records.
+<p>FSTL operates in the <strong>Property Technology (PropTech)</strong> sector, focused on transforming land and landed property into structured, investable capital. COMET OS Phase I provides a scalable infrastructure to verify ownership, reduce fraud, and issue QR-secured receipts directly linked to FSTL First Bank transactions. Phase II will integrate Title Insurance, unlocking true capital access for verified assets.</p>
+<p><strong>Key Offerings:</strong></p>
+<ul>
+<li>Verification of land & landed property (residential, commercial, industrial)</li>
+<li>Bank-confirmed payments with QR-secured receipts</li>
+<li>Audit-ready digital ledger for regulators & investors</li>
+<li>Structured asset transformation for capital enablement</li>
+</ul>
+<p><strong>Test Case:</strong> Nigeria Pilot — verifying real properties to demonstrate COMET OS functionality, operational scalability, and investor-readiness.</p>
 </div>
 </div>
 
-<!-- Infrastructure Framework -->
+<!-- INFRASTRUCTURE FRAMEWORK -->
 <div class="container section">
-<h2>Infrastructure Framework</h2>
+<h2>COMET OS Infrastructure</h2>
 <div class="card">
-• OTP identity verification<br>
-• Bank-confirmed payment enforcement<br>
-• QR-secured receipt issuance<br>
-• Audit-ready backend logging<br>
-• Governance-aligned operational model
+<ul>
+<li>OTP & BVN identity verification</li>
+<li>Bank-confirmed payment enforcement</li>
+<li>QR-secured receipt issuance</li>
+<li>Fraud detection & compliance logging</li>
+<li>Digital audit trails for regulatory transparency</li>
+<li>Phase II Title Insurance integration (coming soon)</li>
+</ul>
 </div>
 </div>
 
-<!-- Structured Capitalization -->
-<div class="container section">
+<!-- CAPITALIZATION / INVESTOR SECTION -->
+<div class="container section" id="capital">
 <h2>Structured Capitalization</h2>
 <div class="card">
-Limited Trustee Slots: 10<br><br>
-Capital Ranges:<br>
+<p>FSTL is raising structured capital to deploy COMET OS nationally and operationalize dead asset transformation.</p>
+<p><strong>Limited Trustee Slots:</strong> 10</p>
+<p><strong>Capital Ranges:</strong><br>
 $100K – $250K<br>
 $250K – $500K<br>
-$500K+
-</div>
-</div>
+$500K+</p>
 
-<!-- Trustee Portal -->
-<div class="container section" id="trustee">
-<h2>Trustee Participation Portal</h2>
-<div class="card">
-
-<form id="trusteeForm">
+<h3>Investor / Trustee Interest Form</h3>
+<form>
 <input type="text" placeholder="Full Name*" required>
-<input type="email" placeholder="Professional Email*" required>
-<input type="tel" placeholder="Direct Phone Number*" required>
-
+<input type="email" placeholder="Email*" required>
+<input type="tel" placeholder="Phone*" required>
 <select required>
-<option value="">Select Capital Range*</option>
-<option>$100K – $250K</option>
-<option>$250K – $500K</option>
-<option>$500K+</option>
+<option value="">Select Investment Range*</option>
+<option value="100-250k">$100K-$250K</option>
+<option value="250-500k">$250K-$500K</option>
+<option value="500k+">$500K+</option>
 </select>
-
-<textarea placeholder="Professional Background / Intent Statement" rows="4" required></textarea>
-
-<button type="submit" class="btn">Submit Trustee Interest</button>
+<textarea placeholder="Message"></textarea>
+<button type="submit" class="btn-submit">Submit Interest</button>
 </form>
-
-<div id="slotDisplay" style="margin-top:20px;font-weight:600;">
-Available Trustee Slots: 10
-</div>
-
 </div>
 </div>
 
-<!-- Verification Portal -->
+<!-- VERIFICATION FORM -->
 <div class="container section" id="verification">
 <h2>Tenant / Buyer / Owner Verification</h2>
 <div class="card">
-
-<form id="verificationForm">
+<p>COMET OS Phase I verification requires identity & bank-confirmed payment.</p>
+<p>All payments must go directly to <strong>FSTL First Bank Account: 2025222557</strong>. Receipts are issued only after bank confirmation and are QR-secured.</p>
+<form>
 <input type="text" placeholder="Full Name*" required>
 <input type="tel" placeholder="Phone (OTP)*" required>
-<button type="button" class="btn" onclick="sendOTP()">Send OTP</button>
+<button type="button" class="btn-otp" onclick="sendOTP()">Send OTP</button>
 <input type="text" placeholder="Enter OTP*" required>
 <input type="email" placeholder="Email*" required>
 <input type="text" placeholder="NIN*" required>
@@ -194,19 +126,18 @@ Available Trustee Slots: 10
 <input type="text" placeholder="Bank Name*" required>
 <input type="number" placeholder="Proposed Rent Amount*" required>
 <input type="text" placeholder="Property Location / COMET OS ID*" required>
-
-<button type="submit" class="btn">Submit Verification</button>
+<button type="submit" class="btn-submit">Submit Verification</button>
 </form>
-
 </div>
 </div>
 
-<!-- Banking Section -->
-<div class="container section">
-<h2>Banking & Receipts</h2>
+<!-- CONTACT -->
+<div class="container section" id="contact">
+<h2>Contact & Transparency</h2>
 <div class="card">
-All payments must go directly to <strong>FSTL First Bank Account: 2025222557</strong>.<br><br>
-Receipts are issued only after bank confirmation and are QR-secured for audit.
+<p>Address: No. 19 Egbor Avenue, Off Benoni Hospital Road, GRA, Benin City, Edo State, Nigeria</p>
+<p>Email: fstlsite@gmail.com</p>
+<p>Phone: +2348035888622</p>
 </div>
 </div>
 
@@ -214,62 +145,26 @@ Receipts are issued only after bank confirmation and are QR-secured for audit.
 <div class="container section" id="faq">
 <h2>Frequently Asked Questions</h2>
 <div class="card">
-<strong>Do you hold client funds?</strong><br>
-No — all payments go directly to FSTL First Bank.<br><br>
-
-<strong>When is receipt issued?</strong><br>
-After bank confirmation only, QR-secured.<br><br>
-
-<strong>Are receipts forge-proof?</strong><br>
-Yes, QR-secured & database-linked.<br><br>
-
-<strong>How long does verification take?</strong><br>
-24–48 hours depending on location.
-</div>
-</div>
-
-<!-- Contact -->
-<div class="container section" id="contact">
-<h2>Contact & Transparency</h2>
-<div class="card">
-Address: No. 19 Egbor Avenue, GRA, Benin City, Edo State, Nigeria<br>
-Email: fstlsite@gmail.com<br>
-Phone: +2348035888622
+<p><strong>Q:</strong> What does FSTL do?<br><strong>A:</strong> FSTL transforms dead land and landed assets into verified, investable capital using COMET OS infrastructure.</p>
+<p><strong>Q:</strong> How does COMET OS work?<br><strong>A:</strong> Identity verification, document validation, bank-confirmed payments, QR-secured receipts, and digital audit trails.</p>
+<p><strong>Q:</strong> Are payments safe?<br><strong>A:</strong> Yes — all payments go to FSTL First Bank and are confirmed via QR receipts.</p>
+<p><strong>Q:</strong> What are trustee slots?<br><strong>A:</strong> Limited participation opportunities for investors who fund FSTL’s infrastructure, giving oversight and early access to structured assets.</p>
+<p><strong>Q:</strong> Does FSTL issue title insurance now?<br><strong>A:</strong> Phase I is verification only. Title Insurance will be integrated in Phase II.</p>
+<p><strong>Q:</strong> How long does verification take?<br><strong>A:</strong> 24–48 hours depending on property type and location.</p>
+<p><strong>Q:</strong> Why invest?<br><strong>A:</strong> Verified assets become investor-ready, reducing risk and creating opportunities for structured capital participation.</p>
+<p><strong>Q:</strong> What is the Nigeria pilot?<br><strong>A:</strong> It is the real-world test case proving COMET OS functionality before scaling globally.</p>
 </div>
 </div>
 
 <div class="footer">
 © 2026 FSTL. All Rights Reserved.<br>
-COMET OS is a verification infrastructure operated under FSTL governance.
+COMET OS is a sovereign-grade land verification infrastructure under FSTL governance.
 </div>
 
 <script>
-
-function sendOTP(){
-alert("OTP sent — demo only");
+function sendOTP() {
+alert("OTP sent to phone — demo only");
 }
-
-document.getElementById('verificationForm').addEventListener('submit', function(e){
-e.preventDefault();
-alert("Verification submitted. Settlement must go directly to FSTL First Bank Account 2025222557.");
-});
-
-let trusteeSlots = 10;
-
-document.getElementById('trusteeForm').addEventListener('submit', function(e){
-e.preventDefault();
-
-if(trusteeSlots > 0){
-trusteeSlots--;
-document.getElementById('slotDisplay').innerText =
-"Available Trustee Slots: " + trusteeSlots;
-
-alert("Trustee interest submitted. Governance team will review and contact you.");
-} else {
-alert("All trustee slots have been filled.");
-}
-});
-
 </script>
 
 </body>
